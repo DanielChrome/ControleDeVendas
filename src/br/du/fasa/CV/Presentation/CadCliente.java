@@ -1,0 +1,73 @@
+package br.du.fasa.CV.Presentation;
+
+import br.du.fasa.CV.DataAccess.ClienteDAO;
+import br.du.fasa.CV.DomainModel.Cliente;
+import br.edu.fasa.CV.R;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class CadCliente extends Activity {
+	Cliente cliente;
+	ClienteDAO cdao;
+	EditText nome,endereco,telefone;
+	Button salvar,cancelar;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.cadastrocliente);
+        nome  = (EditText)findViewById(R.id.ednome);
+        endereco = (EditText) findViewById(R.id.edendereco);
+        telefone = (EditText) findViewById(R.id.edtelefone);
+        salvar   = (Button)findViewById(R.id.btsalvar);
+        cancelar = (Button)findViewById(R.id.btcancelar);
+        cliente = new Cliente();
+        cdao = new ClienteDAO(getApplicationContext());
+        
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_cadastro, menu);
+        return true;
+    }
+    
+    public void Salvar(View v){
+    	AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+    	Log.d("DB4O", "Tentando salvar");
+    	try{
+    		cliente.setNome(nome.getText().toString());
+    		cliente.setEndereco(endereco.getText().toString());
+    		cliente.setTelefone(telefone.getText().toString());
+    		cdao.salvar(cliente);    		
+    		alertDialog.setTitle("Cadastro de Clientes");
+    		alertDialog.setMessage("Cliente "+ cliente.getNome() + "salvo com sucesso");
+    		alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+    		   public void onClick(DialogInterface dialog, int which) {
+    		      finish();
+    		   }
+    		});
+    		alertDialog.show();
+    	}catch(Exception e){    		
+    		Log.d("DB4O", "Erro ao salvo"+e);
+    		alertDialog.setTitle("Erro ao salvar");
+    		alertDialog.setMessage("Houve um erro ao salvar o cliente.");
+    		alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+    		   public void onClick(DialogInterface dialog, int which) {
+    		      finish();
+    		   }
+    		});
+    		alertDialog.show();
+    	}
+    }
+    
+    public void Cancelar(View v){
+    	finish();
+    }
+}

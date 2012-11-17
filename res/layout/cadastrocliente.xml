@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"> 
+	
+    <TextView 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/cadcliente"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:textColor="@color/Vermelho"
+        />
+    
+	<TableLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+               
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/nome" />
+
+           <EditText 
+               android:id="@+id/ednome"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:inputType="text"
+               android:layout_weight="1.0"                   
+               />
+        </TableRow>
+               
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/endereco" />
+
+           <EditText 
+               android:id="@+id/edendereco"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:inputType="text"
+               android:layout_weight="1.0"                   
+               />
+        </TableRow>
+              
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/telefone" />
+
+           <EditText 
+               android:id="@+id/edtelefone"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:inputType="number"
+               android:layout_weight="1.0"                   
+               />
+        </TableRow>
+              
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+   		<Button
+   		    android:id="@+id/btsalvar"
+   		    android:layout_width="155dp"
+   		    android:layout_height="wrap_content"
+   		    android:text="@string/salvar" 
+   		    android:onClick="Salvar"/>
+
+    	<Button
+    	    android:id="@+id/btcancelar"
+    	    android:layout_width="155dp"
+    	    android:layout_height="wrap_content"
+    	    android:text="@string/cancelar" 
+    	    android:onClick="Cancelar"/>
+
+    </LinearLayout>
+</LinearLayout>
