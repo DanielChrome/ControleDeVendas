@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Documento {
 	private String documento;
-	private Date data_vencinento;
+	private Date dataVencimento;
 	private boolean faturado;
 	private Venda venda;
 	
@@ -12,11 +12,11 @@ public class Documento {
 		
 	}
 	
-	public Documento(String documento, Date data_vencinento, boolean faturado,
+	public Documento(String documento, Date dataVencimento, boolean faturado,
 			Venda venda) {
 		super();
 		this.documento = documento;
-		this.data_vencinento = data_vencinento;
+		this.dataVencimento = dataVencimento;
 		this.faturado = faturado;
 		this.venda = venda;
 	}
@@ -29,12 +29,12 @@ public class Documento {
 		this.documento = documento;
 	}
 
-	public Date getData_vencinento() {
-		return data_vencinento;
+	public Date getDataVencimento() {
+		return dataVencimento;
 	}
 
-	public void setData_vencinento(Date data_vencinento) {
-		this.data_vencinento = data_vencinento;
+	public void setDataVencimento(Date dataVencimento) {
+		this.dataVencimento = dataVencimento;
 	}
 
 	public boolean isFaturado() {

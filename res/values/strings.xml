@@ -1,9 +1,9 @@
 <resources>
 
-    <string name="app_name">AndroidDB4O</string>
+    <string name="app_name">Controle de Vendas</string>
     <string name="hello_world">Hello world!</string>
-    <string name="menu_settings">Settings</string>
-    <string name="title_activity_principal">Principal</string>
+    <string name="menu_settings">Configurações</string>
+    <string name="title_activity_principal">Controle de Vendas</string>
     <string name="contentdescription">Descricao</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="listar">Listar</string>

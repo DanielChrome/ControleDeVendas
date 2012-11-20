@@ -1,7 +1,7 @@
 package br.du.fasa.CV.Presentation;
 
-import br.du.fasa.CV.DataAccess.ClienteDAO;
 import br.du.fasa.CV.DomainModel.Cliente;
+import br.du.fasa.CV.DataAccess.ClienteDAO;
 import br.edu.fasa.CV.R;
 import android.app.Activity;
 import android.app.AlertDialog;

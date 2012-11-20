@@ -6,17 +6,17 @@ import java.util.List;
 public class Venda {
 	private Cliente cliente;
 	private List<Produto> produtos;
-	private Date data_venda;
+	private Date dataVenda;
 	
 	public Venda(){
 		
 	}
 
-	public Venda(Cliente cliente, List<Produto> produtos, Date data_venda) {
+	public Venda(Cliente cliente, List<Produto> produtos, Date dataVenda) {
 		super();
 		this.cliente = cliente;
 		this.produtos = produtos;
-		this.data_venda = data_venda;
+		this.dataVenda = dataVenda;
 	}
 
 
@@ -37,12 +37,12 @@ public class Venda {
 		this.produtos = produtos;
 	}
 
-	public Date getData_venda() {
-		return data_venda;
+	public Date getDataVenda() {
+		return dataVenda;
 	}
 
-	public void setData_venda(Date data_venda) {
-		this.data_venda = data_venda;
+	public void setDataVenda(Date dataVenda) {
+		this.dataVenda = dataVenda;
 	}
 	
 	/**
