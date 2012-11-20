@@ -13,6 +13,7 @@
     <string name="telefone">Telefone</string>
     <string name="salvar">Salvar</string>
     <string name="cancelar">Cancelar</string>
+    <string name="voltar">Voltar</string>
     <string name="cadcliente">Cadastro de Clientes</string>
     <string name="title_activity_lista">Lista</string>
     <string name="title_activity_cad_produto">CadProduto</string>

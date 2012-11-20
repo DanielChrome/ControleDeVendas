@@ -20,18 +20,19 @@ public final class R {
         public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
-        public static final int btcadastrar=0x7f080009;
-        public static final int btcancelar=0x7f080004;
-        public static final int btlistar=0x7f08000a;
-        public static final int btsalvar=0x7f080003;
+        public static final int btcadastrar=0x7f08000a;
+        public static final int btcancelar=0x7f080005;
+        public static final int btlistar=0x7f08000b;
+        public static final int btsalvar=0x7f080004;
+        public static final int btvoltar=0x7f080003;
         public static final int edendereco=0x7f080001;
         public static final int ednome=0x7f080000;
         public static final int edtelefone=0x7f080002;
-        public static final int listacliente=0x7f080007;
-        public static final int listnome=0x7f080005;
-        public static final int listtelefone=0x7f080006;
-        public static final int menu_settings=0x7f08000b;
-        public static final int tableLayout1=0x7f080008;
+        public static final int listacliente=0x7f080008;
+        public static final int listnome=0x7f080006;
+        public static final int listtelefone=0x7f080007;
+        public static final int menu_settings=0x7f08000c;
+        public static final int tableLayout1=0x7f080009;
     }
     public static final class layout {
         public static final int cad_categoria=0x7f030000;
@@ -51,8 +52,8 @@ public final class R {
     public static final class string {
         public static final int app_name=0x7f050000;
         public static final int cadastrar=0x7f050005;
-        public static final int cadcategoria=0x7f050011;
-        public static final int cadcliente=0x7f05000d;
+        public static final int cadcategoria=0x7f050012;
+        public static final int cadcliente=0x7f05000e;
         public static final int cancelar=0x7f05000c;
         public static final int contentdescription=0x7f050004;
         public static final int endereco=0x7f050009;
@@ -62,11 +63,12 @@ public final class R {
         public static final int nome=0x7f050008;
         public static final int salvar=0x7f05000b;
         public static final int telefone=0x7f05000a;
-        public static final int title_activity_cad_categoria=0x7f050010;
-        public static final int title_activity_cad_produto=0x7f05000f;
+        public static final int title_activity_cad_categoria=0x7f050011;
+        public static final int title_activity_cad_produto=0x7f050010;
         public static final int title_activity_cadastro=0x7f050007;
-        public static final int title_activity_lista=0x7f05000e;
+        public static final int title_activity_lista=0x7f05000f;
         public static final int title_activity_principal=0x7f050003;
+        public static final int voltar=0x7f05000d;
     }
     public static final class style {
         public static final int AppTheme=0x7f060000;

@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:text="@string/cadcliente"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:gravity="center"
         android:textColor="@color/Vermelho"
         />
@@ -76,23 +76,35 @@
     </TableLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-   		<Button
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+		
+        <ImageButton
+    	    android:id="@+id/btvoltar"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:contentDescription="@string/voltar"
+    	    android:src="@android:drawable/ic_menu_revert" 
+    	    android:onClick="Cancelar"/>
+        
+   		<ImageButton
    		    android:id="@+id/btsalvar"
-   		    android:layout_width="155dp"
+   		    android:layout_width="wrap_content"
    		    android:layout_height="wrap_content"
-   		    android:text="@string/salvar" 
+   		    android:src="@android:drawable/ic_menu_save"
+   		    android:contentDescription="@string/salvar" 
    		    android:onClick="Salvar"/>
 
-    	<Button
+    	<ImageButton
     	    android:id="@+id/btcancelar"
-    	    android:layout_width="155dp"
+    	    android:layout_width="wrap_content"
     	    android:layout_height="wrap_content"
-    	    android:text="@string/cancelar" 
+    	    android:contentDescription="@string/cancelar"
+    	    android:src="@android:drawable/ic_menu_close_clear_cancel" 
     	    android:onClick="Cancelar"/>
+    	
 
     </LinearLayout>
 </LinearLayout>
