@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.edu.fasa.CV"
+    package="br.edu.fasa.cv"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme" 
         android:allowBackup="false">
         <activity
-            android:name="br.du.fasa.CV.Presentation.Principal"
+            android:name="br.edu.fasa.cv.presentation.Principal"
             android:label="@string/title_activity_principal" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,19 +22,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="br.du.fasa.CV.Presentation.CadCliente"
+            android:name="br.edu.fasa.cv.presentation.CadCliente"
             android:label="@string/title_activity_cadastro" >
         </activity>
         <activity
-            android:name="br.du.fasa.CV.Presentation.Lista"
+            android:name="br.edu.fasa.cv.presentation.Lista"
             android:label="@string/title_activity_lista" >
         </activity>
         <activity
-            android:name="br.du.fasa.CV.Presentation.CadProduto"
+            android:name="br.edu.fasa.cv.presentation.CadProduto"
             android:label="@string/title_activity_cad_produto" >
         </activity>
         <activity
-            android:name="br.du.fasa.CV.Presentation.CadCategoria"
+            android:name="br.edu.fasa.cv.Presentation.CadCategoria"
             android:label="@string/title_activity_cad_categoria" >
         </activity>
     </application>
