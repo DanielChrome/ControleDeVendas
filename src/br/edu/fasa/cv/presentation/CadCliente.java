@@ -1,8 +1,5 @@
 package br.edu.fasa.cv.presentation;
 
-import br.edu.fasa.cv.R;
-import br.edu.fasa.cv.dataaccess.ClienteDAO;
-import br.edu.fasa.cv.domainmodel.Cliente;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -10,14 +7,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import br.edu.fasa.cv.R;
+import br.edu.fasa.cv.dataaccess.ClienteDAO;
+import br.edu.fasa.cv.domainmodel.Cliente;
 
 public class CadCliente extends Activity {
 	Cliente cliente;
 	ClienteDAO cdao;
 	EditText nome,endereco,telefone;
-	Button salvar,cancelar;
+	ImageButton salvar,cancelar;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +25,8 @@ public class CadCliente extends Activity {
         nome  = (EditText)findViewById(R.id.ednome);
         endereco = (EditText) findViewById(R.id.edendereco);
         telefone = (EditText) findViewById(R.id.edtelefone);
-        salvar   = (Button)findViewById(R.id.btsalvar);
-        cancelar = (Button)findViewById(R.id.btcancelar);
+        salvar   = (ImageButton)findViewById(R.id.btsalvar);
+        cancelar = (ImageButton)findViewById(R.id.btcancelar);
         cliente = new Cliente();
         cdao = new ClienteDAO(getApplicationContext());
         

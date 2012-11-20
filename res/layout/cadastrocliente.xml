@@ -3,79 +3,74 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:layout_width="match_parent"> 
+    android:layout_width="match_parent"
+    android:background="@color/CinzaClaro"> 
 	
     <TextView 
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:text="@string/cadcliente"
         android:textSize="25sp"
         android:gravity="center"
-        android:textColor="@color/Vermelho"
+        android:textColor="@color/CinzaEscuro"
         />
     
-	<TableLayout 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-               
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="@string/nome" />
+               android:text="@string/nome"
+               android:textColor="@color/CinzaEscuro"/>
 
            <EditText 
                android:id="@+id/ednome"
-               android:layout_width="fill_parent"
+               android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:inputType="text"
-               android:layout_weight="1.0"                   
+               android:background="@drawable/bgedittext"
+               android:layout_marginBottom="5dp"
+               android:layout_marginLeft="5dp"
+               android:layout_marginRight="5dp"                 
                />
-        </TableRow>
-               
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+       
 
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="@string/endereco" />
+               android:text="@string/endereco"
+               android:textColor="@color/CinzaEscuro"
+               />
 
            <EditText 
                android:id="@+id/edendereco"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:inputType="text"
-               android:layout_weight="1.0"                   
+               android:background="@drawable/bgedittext"
+               android:layout_marginBottom="5dp"
+               android:layout_marginLeft="5dp"
+               android:layout_marginRight="5dp"                     
                />
-        </TableRow>
-              
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+
 
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="@string/telefone" />
+               android:text="@string/telefone"
+               android:textColor="@color/CinzaEscuro"
+               />
 
            <EditText 
                android:id="@+id/edtelefone"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:inputType="number"
-               android:layout_weight="1.0"                   
+               android:background="@drawable/bgedittext"
+               android:layout_marginBottom="5dp"
+               android:layout_marginLeft="5dp"
+               android:layout_marginRight="5dp"                     
                />
-        </TableRow>
-              
-    </TableLayout>
 
-    <LinearLayout
+           <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -83,26 +78,33 @@
 		
         <ImageButton
     	    android:id="@+id/btvoltar"
-    	    android:layout_width="wrap_content"
-    	    android:layout_height="wrap_content"
+    	    android:layout_width="80dp"
+    	    android:layout_height="70dp"
     	    android:contentDescription="@string/voltar"
-    	    android:src="@android:drawable/ic_menu_revert" 
-    	    android:onClick="Cancelar"/>
+    	    android:src="@drawable/back"
+    	    android:background="@android:color/transparent"
+   		    android:scaleType="centerInside" 
+    	    android:onClick="Cancelar"
+    	    />
         
    		<ImageButton
    		    android:id="@+id/btsalvar"
-   		    android:layout_width="wrap_content"
-   		    android:layout_height="wrap_content"
-   		    android:src="@android:drawable/ic_menu_save"
-   		    android:contentDescription="@string/salvar" 
+   		    android:layout_width="80dp"
+   		    android:layout_height="70dp"
+   		    android:src="@drawable/save"
+   		    android:scaleType="centerInside"
+   		    android:background="@android:color/transparent"
+   		    android:contentDescription="@string/salvar"   		     
    		    android:onClick="Salvar"/>
 
     	<ImageButton
     	    android:id="@+id/btcancelar"
-    	    android:layout_width="wrap_content"
-    	    android:layout_height="wrap_content"
+    	    android:layout_width="80dp"
+    	    android:layout_height="70dp"
     	    android:contentDescription="@string/cancelar"
-    	    android:src="@android:drawable/ic_menu_close_clear_cancel" 
+   		    android:scaleType="centerInside"
+   		    android:background="@android:color/transparent"
+    	    android:src="@drawable/cancel" 
     	    android:onClick="Cancelar"/>
     	
 

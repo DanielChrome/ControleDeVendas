@@ -2,5 +2,7 @@
 <resources>
     <color name="Verde">#00FF00</color>
     <color name="Vermelho">#FF0000</color>
+    <color name="CinzaClaro">#c4c4c6</color>
+    <color name="CinzaEscuro">#4e4e4f</color>
     
 </resources>

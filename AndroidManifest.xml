@@ -34,7 +34,7 @@
             android:label="@string/title_activity_cad_produto" >
         </activity>
         <activity
-            android:name="br.edu.fasa.cv.Presentation.CadCategoria"
+            android:name="br.edu.fasa.cv.presentation.CadCategoria"
             android:label="@string/title_activity_cad_categoria" >
         </activity>
     </application>
