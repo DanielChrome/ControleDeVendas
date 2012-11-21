@@ -21,12 +21,12 @@ public class CadCliente extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cadastrocliente);
-        nome  = (EditText)findViewById(R.id.ednome);
-        endereco = (EditText) findViewById(R.id.edendereco);
-        telefone = (EditText) findViewById(R.id.edtelefone);
-        salvar   = (ImageButton)findViewById(R.id.btsalvar);
-        cancelar = (ImageButton)findViewById(R.id.btcancelar);
+        setContentView(R.layout.cad_cliente);
+        nome  = (EditText)findViewById(R.id.cli_ednome);
+        endereco = (EditText) findViewById(R.id.cli_edendereco);
+        telefone = (EditText) findViewById(R.id.cli_edtelefone);
+        salvar   = (ImageButton)findViewById(R.id.cli_btsalvar);
+        cancelar = (ImageButton)findViewById(R.id.cli_btcancelar);
         cliente = new Cliente();
         cdao = new ClienteDAO(getApplicationContext());
         

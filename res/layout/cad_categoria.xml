@@ -1,13 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" 
-    android:orientation="horizontal">
+    android:layout_height="match_parent"
+    android:background="@color/CinzaClaro"
+    android:orientation="vertical" >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world"
-        tools:context=".CadCategoria" />
+        android:gravity="center"
+        android:text="@string/cadcategoria"
+        android:textColor="@color/CinzaEscuro"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/descricao"
+        android:textColor="@color/CinzaEscuro" />
+
+    <EditText
+        android:id="@+id/cat_etdescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bgedittext"
+        android:gravity="right"
+        android:inputType="text" />
+
+    <CheckBox
+        android:id="@+id/cat_cksubcategoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="@string/subcategoria" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/categoriapai"
+        android:textColor="@color/CinzaEscuro" />
+
+    <Spinner
+        android:id="@+id/cat_spcategoriapai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@android:layout/simple_spinner_item" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/cat_btvoltar"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/voltar"
+            android:onClick="Cancelar"
+            android:scaleType="centerInside"
+            android:src="@drawable/back" />
+
+        <ImageButton
+            android:id="@+id/cat_btsalvar"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/salvar"
+            android:onClick="Salvar"
+            android:scaleType="centerInside"
+            android:src="@drawable/save" />
+
+        <ImageButton
+            android:id="@+id/cat_btcancelar"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cancelar"
+            android:onClick="Cancelar"
+            android:scaleType="centerInside"
+            android:src="@drawable/cancel" />
+    </LinearLayout>
 
 </LinearLayout>

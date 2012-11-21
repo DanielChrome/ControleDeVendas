@@ -1,35 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/CinzaClaro"
     android:orientation="vertical" >
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/contentdescription"
-        android:src="@drawable/db4o" />
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        android:src="@drawable/logo" />
 
-    <TableLayout
-        android:id="@+id/tableLayout1"
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" 
+        android:layout_marginBottom="5dp">
 
-        <Button
-            android:id="@+id/btcadastrar"
+        <ImageButton
+            android:id="@+id/cadvenda"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/voltar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/converter" />
+
+        <ImageButton
+            android:id="@+id/cadproduto"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/salvar"
+            android:onClick="executaOpcao"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/product" />
+
+        <ImageButton
+            android:id="@+id/cadcliente"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cancelar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/client" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" 
+        android:layout_marginBottom="5dp">
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cadastrar"
-            android:textSize="15sp" 
-            android:onClick="abreCadastro"/>
+            android:text="@string/vendas"
+            android:textColor="@color/CinzaEscuro"/>
 
-        <Button
-            android:id="@+id/btlistar"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/listar"
-            android:textSize="15sp" 
-            android:onClick="abreLista"/>
-    </TableLayout>
+            android:text="@string/produtos"
+            android:layout_marginLeft="38dp"
+            android:layout_marginRight="38dp"
+            android:textColor="@color/CinzaEscuro"/>
+    
+    	<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clientes"
+            android:textColor="@color/CinzaEscuro"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp">
+
+        <ImageButton
+            android:id="@+id/cadcategoria"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/voltar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/other" />
+
+        <ImageButton
+            android:id="@+id/relatorios"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/salvar"
+            android:onClick="executaOpcao"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/notes" />
+
+        <ImageButton
+            android:id="@+id/configuracoes"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cancelar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/settings" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" 
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/categorias"
+            android:textColor="@color/CinzaEscuro" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="15dp"
+            android:text="@string/relatorios"
+            android:textColor="@color/CinzaEscuro" />
+    
+    	<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/configuracoes"
+            android:textColor="@color/CinzaEscuro"/>
+    </LinearLayout>
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/desenvolvedor"
+        android:textColor="@color/CinzaEscuro"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        />
 
 </LinearLayout>

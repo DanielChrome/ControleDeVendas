@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/CinzaClaro"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/cadcliente"
+        android:textColor="@color/CinzaEscuro"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nome"
+        android:textColor="@color/CinzaEscuro" />
+
+    <EditText
+        android:id="@+id/cli_ednome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bgedittext"
+        android:gravity="right"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/endereco"
+        android:textColor="@color/CinzaEscuro" />
+
+    <EditText
+        android:id="@+id/cli_edendereco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bgedittext"
+        android:gravity="right"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/telefone"
+        android:textColor="@color/CinzaEscuro" />
+
+    <EditText
+        android:id="@+id/cli_edtelefone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bgedittext"
+        android:gravity="right"
+        android:inputType="number" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/cli_btvoltar"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/voltar"
+            android:onClick="Cancelar"
+            android:scaleType="centerInside"
+            android:src="@drawable/back" />
+
+        <ImageButton
+            android:id="@+id/cli_btsalvar"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/salvar"
+            android:onClick="Salvar"
+            android:scaleType="centerInside"
+            android:src="@drawable/save" />
+
+        <ImageButton
+            android:id="@+id/cli_btcancelar"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cancelar"
+            android:onClick="Cancelar"
+            android:scaleType="centerInside"
+            android:src="@drawable/cancel" />
+    </LinearLayout>
+
+</LinearLayout>

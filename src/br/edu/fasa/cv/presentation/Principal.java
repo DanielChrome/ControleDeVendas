@@ -1,22 +1,17 @@
 package br.edu.fasa.cv.presentation;
 
-import br.edu.fasa.cv.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
+import br.edu.fasa.cv.R;
 
 public class Principal extends Activity {
-	Button cadastrar;
-	Button listar;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.principal);
-        cadastrar = (Button)findViewById(R.id.btcadastrar);
-        listar = (Button)findViewById(R.id.btlistar);
     }
 
     @Override
@@ -25,13 +20,30 @@ public class Principal extends Activity {
         return true;
     }
     
-    public void abreCadastro(View v){
-    	Intent i = new Intent(getApplicationContext(),CadCliente.class);
-    	startActivity(i);
-    }
-    
-    public void abreLista(View v){
-    	Intent i = new Intent(getApplicationContext(),Lista.class);
+    public void executaOpcao(View v){
+    	Intent i = new Intent(this,Principal.class);;
+    	switch(v.getId()){
+    		case R.id.cadvenda:
+    			//i = new Intent(this,CadCliente.class);
+    			break;
+    		case R.id.cadproduto:
+    			i = new Intent(this,CadProduto.class);
+    			break;
+    		case R.id.cadcliente:
+    			i = new Intent(this,CadCliente.class);
+    			break;
+    		case R.id.cadcategoria:
+    			i = new Intent(this,CadCategoria.class);
+    			break;
+    		case R.id.relatorios:
+    			//i = new Intent(this,CadCliente.class);
+    			break;
+    		case R.id.configuracoes:
+    			//i = new Intent(this,CadCliente.class);
+    			break;
+    		default:
+    			i = new Intent(this,Principal.class);
+    	}
     	startActivity(i);
     }
 }

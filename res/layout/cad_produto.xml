@@ -1,14 +1,117 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@color/CinzaClaro"
+    android:orientation="vertical" >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world"
-        tools:context=".CadProduto" />
+        android:gravity="center"
+        android:text="@string/cadcliente"
+        android:textColor="@color/CinzaEscuro"
+        android:textSize="25sp" />
 
-</RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/descricao"
+        android:textColor="@color/CinzaEscuro" />
+
+    <EditText
+        android:id="@+id/prd_eddescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bgedittext"
+        android:gravity="right"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/estoque"
+        android:textColor="@color/CinzaEscuro" />
+
+    <EditText
+        android:id="@+id/prd_edestoque"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bgedittext"
+        android:gravity="right"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/valor"
+        android:textColor="@color/CinzaEscuro" />
+
+    <EditText
+        android:id="@+id/prd_edvalor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bgedittext"
+        android:gravity="right"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/categoria"
+        android:textColor="@color/CinzaEscuro" />
+
+    <Spinner
+        android:id="@+id/prd_spcategoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@android:layout/simple_spinner_item" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/btvoltar"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/voltar"
+            android:onClick="Cancelar"
+            android:scaleType="centerInside"
+            android:src="@drawable/back" />
+
+        <ImageButton
+            android:id="@+id/btsalvar"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/salvar"
+            android:onClick="Salvar"
+            android:scaleType="centerInside"
+            android:src="@drawable/save" />
+
+        <ImageButton
+            android:id="@+id/btcancelar"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cancelar"
+            android:onClick="Cancelar"
+            android:scaleType="centerInside"
+            android:src="@drawable/cancel" />
+    </LinearLayout>
+
+</LinearLayout>
