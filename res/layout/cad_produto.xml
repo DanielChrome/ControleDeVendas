@@ -4,13 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/CinzaClaro"
+    android:clickable="true"
     android:orientation="vertical" >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/cadcliente"
+        android:text="@string/cadproduto"
         android:textColor="@color/CinzaEscuro"
         android:textSize="25sp" />
 
@@ -28,7 +29,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:background="@drawable/bgedittext"
-        android:gravity="right"
+        android:enabled="false"
         android:inputType="text" />
 
     <TextView
@@ -45,7 +46,6 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:background="@drawable/bgedittext"
-        android:gravity="right"
         android:inputType="numberDecimal" />
 
     <TextView
@@ -62,7 +62,6 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:background="@drawable/bgedittext"
-        android:gravity="right"
         android:inputType="numberDecimal" />
 
     <TextView
@@ -75,43 +74,87 @@
         android:id="@+id/prd_spcategoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bgspinner"
         tools:listitem="@android:layout/simple_spinner_item" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        >
 
         <ImageButton
-            android:id="@+id/btvoltar"
-            android:layout_width="80dp"
-            android:layout_height="70dp"
+            android:id="@+id/prd_incluir"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/voltar"
-            android:onClick="Cancelar"
+            android:onClick="executaOpcao"
             android:scaleType="centerInside"
-            android:src="@drawable/back" />
+            android:src="@drawable/more" />
 
         <ImageButton
-            android:id="@+id/btsalvar"
-            android:layout_width="80dp"
-            android:layout_height="70dp"
+            android:id="@+id/prd_alterar"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/salvar"
-            android:onClick="Salvar"
+            android:onClick="executaOpcao"
             android:scaleType="centerInside"
-            android:src="@drawable/save" />
+            android:src="@drawable/refresh" />
 
         <ImageButton
-            android:id="@+id/btcancelar"
-            android:layout_width="80dp"
-            android:layout_height="70dp"
+            android:id="@+id/prd_pesquisar"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/cancelar"
-            android:onClick="Cancelar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/search" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" 
+        >
+
+        <ImageButton
+            android:id="@+id/prd_confirmar"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/voltar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/confirm" />
+
+        <ImageButton
+            android:id="@+id/prd_cancelar"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/salvar"
+            android:onClick="executaOpcao"
             android:scaleType="centerInside"
             android:src="@drawable/cancel" />
+
+        <ImageButton
+            android:id="@+id/prd_voltar"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cancelar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/back" />
     </LinearLayout>
+    
 
 </LinearLayout>

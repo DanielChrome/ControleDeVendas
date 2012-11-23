@@ -4,13 +4,13 @@ android:layout_width="fill_parent"
 android:layout_height="fill_parent"
 xmlns:android="http://schemas.android.com/apk/res/android"
 android:orientation="vertical"
-android:background="#FFFFFFFF"
+android:background="@color/CinzaClaro"
 >
         <ListView
         android:id="@+id/listacliente"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="#ECECEC"
+        android:divider="@color/CinzaEscuro"
         android:dividerHeight="1sp"
         />
 </LinearLayout>

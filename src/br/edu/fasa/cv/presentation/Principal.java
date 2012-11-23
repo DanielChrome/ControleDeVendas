@@ -5,13 +5,29 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnCreateContextMenuListener;
+import android.widget.ImageButton;
 import br.edu.fasa.cv.R;
 
-public class Principal extends Activity {
-    @Override
+public class Principal extends Activity implements
+    OnCreateContextMenuListener{
+    ImageButton[] menu = new ImageButton[6];
+	public static final int CONTEXTMENUITEM_NEW = 100;
+	public static final int CONTEXTMENUITEM_LIST = 101;
+	
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.principal);
+        menu[0] = (ImageButton) findViewById(R.id.cadvenda);
+        menu[1] = (ImageButton) findViewById(R.id.cadproduto);
+        menu[2] = (ImageButton) findViewById(R.id.cadcliente);
+        menu[3] = (ImageButton) findViewById(R.id.cadcategoria);
+        menu[4] = (ImageButton) findViewById(R.id.relatorios);
+        menu[5] = (ImageButton) findViewById(R.id.configuracoes);
+        
+        menu[4].setEnabled(false);
+        menu[5].setEnabled(false);
     }
 
     @Override
@@ -46,4 +62,6 @@ public class Principal extends Activity {
     	}
     	startActivity(i);
     }
+    
+    
 }

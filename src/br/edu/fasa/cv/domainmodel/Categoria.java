@@ -12,6 +12,10 @@ public class Categoria {
 		this.subcategoria = subcategoria;
 	}
 
+	public Categoria() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getDescricao() {
 		return descricao;
 	}
@@ -36,4 +40,11 @@ public class Categoria {
 		this.categoriaPai = categoriaPai;
 	}
 	
+	@Override
+	public String toString() {
+		if(categoriaPai != null){
+			return categoriaPai.getDescricao()+" - " + descricao;
+		}
+		return descricao;
+	}
 }

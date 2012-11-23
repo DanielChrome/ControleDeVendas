@@ -14,18 +14,23 @@ public class ClienteDAO extends DAOGenerico<Cliente>{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Cliente buscaPorNome(String nome){
+	public List<Cliente> buscaPorNome(String nome){
 		c = new Cliente();
 		c.setNome(nome);
 		ObjectSet<Cliente> result = db().queryByExample(c);
-		if(result.hasNext()){
-			c = result.next();
-		}
-		return c;
+		return result;
 	}
 	
 	public List<Cliente> listarTodos(){
 		return db().queryByExample(Cliente.class);
 	}
 	
+	public Cliente abrir(Cliente cli){
+		Cliente c = new Cliente(); 
+		ObjectSet<Cliente> result = db().queryByExample(cli);
+		if (result.hasNext()){
+			c = result.next();
+		}
+		return c;
+	}
 }
