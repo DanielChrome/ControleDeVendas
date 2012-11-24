@@ -10,7 +10,8 @@ android:background="@color/CinzaClaro"
         android:id="@+id/listacliente"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@color/CinzaEscuro"
+        android:divider="@android:color/white"
         android:dividerHeight="1sp"
+        android:background="@android:drawable/alert_dark_frame"
         />
 </LinearLayout>

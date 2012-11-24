@@ -8,6 +8,9 @@
 package br.edu.fasa.cv;
 
 public final class R {
+    public static final class array {
+        public static final int prazo=0x7f060000;
+    }
     public static final class attr {
     }
     public static final class color {
@@ -94,64 +97,89 @@ public final class R {
         public static final int settings_pressed=0x7f02004a;
     }
     public static final class id {
-        public static final int cadcategoria=0x7f080022;
-        public static final int cadcliente=0x7f080021;
-        public static final int cadproduto=0x7f080020;
-        public static final int cadvenda=0x7f08001f;
-        public static final int cat_alterar=0x7f080004;
-        public static final int cat_cancelar=0x7f080007;
-        public static final int cat_cksubcategoria=0x7f080001;
-        public static final int cat_confirmar=0x7f080006;
-        public static final int cat_etdescricao=0x7f080000;
-        public static final int cat_incluir=0x7f080003;
-        public static final int cat_pesquisar=0x7f080005;
-        public static final int cat_spcategoriapai=0x7f080002;
-        public static final int cat_voltar=0x7f080008;
-        public static final int cli_alterar=0x7f08000d;
-        public static final int cli_cancelar=0x7f080010;
-        public static final int cli_confirmar=0x7f08000f;
-        public static final int cli_edendereco=0x7f08000a;
-        public static final int cli_edtelefone=0x7f08000b;
-        public static final int cli_incluir=0x7f08000c;
-        public static final int cli_nome=0x7f080009;
-        public static final int cli_pesquisar=0x7f08000e;
-        public static final int cli_voltar=0x7f080011;
-        public static final int configuracoes=0x7f080024;
-        public static final int list_prd_categoria=0x7f080026;
-        public static final int list_prd_descricao=0x7f080025;
-        public static final int list_prd_estoque=0x7f080027;
-        public static final int list_prd_valor=0x7f080028;
-        public static final int listacliente=0x7f08001e;
-        public static final int listnome=0x7f08001c;
-        public static final int listtelefone=0x7f08001d;
-        public static final int menu_settings=0x7f080029;
-        public static final int prd_alterar=0x7f080017;
-        public static final int prd_cancelar=0x7f08001a;
-        public static final int prd_confirmar=0x7f080019;
-        public static final int prd_eddescricao=0x7f080012;
-        public static final int prd_edestoque=0x7f080013;
-        public static final int prd_edvalor=0x7f080014;
-        public static final int prd_incluir=0x7f080016;
-        public static final int prd_pesquisar=0x7f080018;
-        public static final int prd_spcategoria=0x7f080015;
-        public static final int prd_voltar=0x7f08001b;
-        public static final int relatorios=0x7f080023;
+        public static final int cadcategoria=0x7f090035;
+        public static final int cadcliente=0x7f090034;
+        public static final int cadproduto=0x7f090033;
+        public static final int cadvenda=0x7f090032;
+        public static final int cat_alterar=0x7f090004;
+        public static final int cat_cancelar=0x7f090007;
+        public static final int cat_cksubcategoria=0x7f090001;
+        public static final int cat_confirmar=0x7f090006;
+        public static final int cat_etdescricao=0x7f090000;
+        public static final int cat_incluir=0x7f090003;
+        public static final int cat_pesquisar=0x7f090005;
+        public static final int cat_spcategoriapai=0x7f090002;
+        public static final int cat_voltar=0x7f090008;
+        public static final int cli_alterar=0x7f09000d;
+        public static final int cli_cancelar=0x7f090010;
+        public static final int cli_confirmar=0x7f09000f;
+        public static final int cli_edendereco=0x7f09000a;
+        public static final int cli_edtelefone=0x7f09000b;
+        public static final int cli_incluir=0x7f09000c;
+        public static final int cli_nome=0x7f090009;
+        public static final int cli_pesquisar=0x7f09000e;
+        public static final int cli_voltar=0x7f090011;
+        public static final int configuracoes=0x7f090037;
+        public static final int iprd_cancelar=0x7f09002d;
+        public static final int iprd_confirmar=0x7f09002c;
+        public static final int iprd_edquantidade=0x7f090029;
+        public static final int iprd_spproduto=0x7f090028;
+        public static final int iprd_txestoque=0x7f09002b;
+        public static final int iprd_txvalor=0x7f09002a;
+        public static final int iprd_voltar=0x7f09002e;
+        public static final int list_prd_categoria=0x7f090039;
+        public static final int list_prd_descricao=0x7f090038;
+        public static final int list_prd_estoque=0x7f09003a;
+        public static final int list_prd_valor=0x7f09003b;
+        public static final int list_vnd_descricao=0x7f09003c;
+        public static final int list_vnd_qtde=0x7f09003d;
+        public static final int list_vnd_total=0x7f09003e;
+        public static final int listacliente=0x7f090031;
+        public static final int listnome=0x7f09002f;
+        public static final int listtelefone=0x7f090030;
+        public static final int menu_settings=0x7f09003f;
+        public static final int prd_alterar=0x7f090017;
+        public static final int prd_cancelar=0x7f09001a;
+        public static final int prd_confirmar=0x7f090019;
+        public static final int prd_eddescricao=0x7f090012;
+        public static final int prd_edestoque=0x7f090013;
+        public static final int prd_edvalor=0x7f090014;
+        public static final int prd_incluir=0x7f090016;
+        public static final int prd_pesquisar=0x7f090018;
+        public static final int prd_spcategoria=0x7f090015;
+        public static final int prd_voltar=0x7f09001b;
+        public static final int relatorios=0x7f090036;
+        public static final int vnd_alterar=0x7f090023;
+        public static final int vnd_cancelar=0x7f090026;
+        public static final int vnd_confirmar=0x7f090025;
+        public static final int vnd_incluir=0x7f090022;
+        public static final int vnd_incluirprd=0x7f09001e;
+        public static final int vnd_listprd=0x7f090020;
+        public static final int vnd_pesquisar=0x7f090024;
+        public static final int vnd_removerprd=0x7f09001f;
+        public static final int vnd_spcliente=0x7f09001c;
+        public static final int vnd_spformapgto=0x7f09001d;
+        public static final int vnd_txtotal=0x7f090021;
+        public static final int vnd_voltar=0x7f090027;
     }
     public static final class layout {
         public static final int cad_categoria=0x7f030000;
         public static final int cad_cliente=0x7f030001;
         public static final int cad_produto=0x7f030002;
-        public static final int item_list=0x7f030003;
-        public static final int lista=0x7f030004;
-        public static final int principal=0x7f030005;
-        public static final int produto_list=0x7f030006;
+        public static final int cad_venda=0x7f030003;
+        public static final int inserirproduto=0x7f030004;
+        public static final int item_list=0x7f030005;
+        public static final int lista=0x7f030006;
+        public static final int principal=0x7f030007;
+        public static final int produto_list=0x7f030008;
+        public static final int produto_vndlist=0x7f030009;
     }
     public static final class menu {
-        public static final int activity_cadastro=0x7f070000;
-        public static final int activity_lista=0x7f070001;
-        public static final int activity_principal=0x7f070002;
-        public static final int cad_categoria=0x7f070003;
-        public static final int cad_produto=0x7f070004;
+        public static final int activity_cadastro=0x7f080000;
+        public static final int activity_lista=0x7f080001;
+        public static final int activity_principal=0x7f080002;
+        public static final int cad_categoria=0x7f080003;
+        public static final int cad_produto=0x7f080004;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
@@ -159,10 +187,12 @@ public final class R {
         public static final int cadcategoria=0x7f050012;
         public static final int cadcliente=0x7f05000e;
         public static final int cadproduto=0x7f050013;
+        public static final int cadvenda=0x7f05002a;
         public static final int cancelar=0x7f05000c;
         public static final int categoria=0x7f050019;
         public static final int categoriapai=0x7f050018;
         public static final int categorias=0x7f05001e;
+        public static final int cliente=0x7f050028;
         public static final int clientes=0x7f05001d;
         public static final int configuracoes=0x7f050020;
         public static final int contentdescription=0x7f050004;
@@ -180,7 +210,9 @@ public final class R {
         public static final int nao=0x7f050027;
         public static final int nome=0x7f050008;
         public static final int ok=0x7f050021;
+        public static final int prazopgto=0x7f050029;
         public static final int produtos=0x7f05001c;
+        public static final int quantidade=0x7f05002c;
         public static final int relatorios=0x7f05001f;
         public static final int salvar=0x7f05000b;
         public static final int sim=0x7f050026;
@@ -191,11 +223,12 @@ public final class R {
         public static final int title_activity_cadastro=0x7f050007;
         public static final int title_activity_lista=0x7f05000f;
         public static final int title_activity_principal=0x7f050003;
+        public static final int total=0x7f05002b;
         public static final int valor=0x7f050015;
         public static final int vendas=0x7f05001b;
         public static final int voltar=0x7f05000d;
     }
     public static final class style {
-        public static final int AppTheme=0x7f060000;
+        public static final int AppTheme=0x7f070000;
     }
 }

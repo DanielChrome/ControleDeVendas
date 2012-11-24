@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/CinzaClaro"
+    android:clickable="true"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/cadvenda"
+        android:textColor="@color/CinzaEscuro"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cliente"
+        android:textColor="@color/CinzaEscuro" />
+
+    <Spinner
+        android:id="@+id/vnd_spcliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bgspinner"
+        tools:listitem="@android:layout/simple_spinner_item" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/prazopgto"
+        android:textColor="@color/CinzaEscuro" />
+
+    <Spinner
+        android:id="@+id/vnd_spformapgto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:entries="@array/prazo"
+        android:background="@drawable/bgspinner"
+        tools:listitem="@android:layout/simple_spinner_item" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/produtos"
+            android:textColor="@color/CinzaEscuro" />
+
+        <ImageButton
+            android:id="@+id/vnd_incluirprd"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="180dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/voltar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/more" />
+
+        <ImageButton
+            android:id="@+id/vnd_removerprd"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/salvar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/refresh" />
+    </LinearLayout>
+
+	
+    <ListView
+        android:id="@+id/vnd_listprd"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:divider="@android:color/white"
+        android:dividerHeight="1sp"
+        android:background="@android:drawable/alert_dark_frame"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total"
+            android:textColor="@color/CinzaEscuro"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/vnd_txtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/CinzaEscuro"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginRight="5dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/vnd_incluir"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/voltar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/more" />
+
+        <ImageButton
+            android:id="@+id/vnd_alterar"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/salvar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/refresh" />
+
+        <ImageButton
+            android:id="@+id/vnd_pesquisar"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cancelar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/search" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/vnd_confirmar"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/voltar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/confirm" />
+
+        <ImageButton
+            android:id="@+id/vnd_cancelar"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/salvar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/cancel" />
+
+        <ImageButton
+            android:id="@+id/vnd_voltar"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cancelar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/back" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/CinzaClaro"
+    android:clickable="true"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/cadproduto"
+        android:textColor="@color/CinzaEscuro"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/produtos"
+        android:textColor="@color/CinzaEscuro" />
+
+    <Spinner
+        android:id="@+id/iprd_spproduto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bgspinner"
+        tools:listitem="@android:layout/simple_spinner_item" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quantidade"
+        android:textColor="@color/CinzaEscuro" />
+
+    <EditText
+        android:id="@+id/iprd_edquantidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bgedittext"
+        android:enabled="false"
+        android:inputType="numberDecimal" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/valor"
+            android:textColor="@color/CinzaEscuro"
+            android:layout_marginRight="5dp"/>
+        
+        <TextView
+            android:id="@+id/iprd_txvalor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/CinzaEscuro"
+            android:layout_marginRight="30dp"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/estoque"
+            android:textColor="@color/CinzaEscuro"
+            android:layout_marginRight="5dp"/>
+        
+        <TextView
+            android:id="@+id/iprd_txestoque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/CinzaEscuro"/>
+        
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/iprd_confirmar"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/voltar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/confirm" />
+
+        <ImageButton
+            android:id="@+id/iprd_cancelar"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/salvar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/cancel" />
+
+        <ImageButton
+            android:id="@+id/iprd_voltar"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cancelar"
+            android:onClick="executaOpcao"
+            android:scaleType="centerInside"
+            android:src="@drawable/back" />
+    </LinearLayout>
+
+</LinearLayout>

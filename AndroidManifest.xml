@@ -13,38 +13,21 @@
         android:theme="@style/AppTheme" 
         android:allowBackup="false">
         <activity
-            android:name="br.edu.fasa.cv.presentation.Principal"
-            android:label="@string/title_activity_principal" >
+            android:name="br.edu.fasa.cv.presentation.Principal" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="br.edu.fasa.cv.presentation.CadCliente"
-            android:label="@string/title_activity_cadastro" >
-        </activity>
-        <activity
-            android:name="br.edu.fasa.cv.presentation.ListaCliente"
-            android:label="@string/title_activity_lista" >
-        </activity>
-        <activity
-            android:name="br.edu.fasa.cv.presentation.CadProduto"
-            android:label="@string/title_activity_cad_produto" >
-        </activity>
-        <activity
-            android:name="br.edu.fasa.cv.presentation.CadCategoria"
-            android:label="@string/title_activity_cad_categoria" >
-        </activity>
-        <activity
-            android:name="br.edu.fasa.cv.presentation.ListaCategoria"
-            android:label="@string/title_activity_cad_categoria" >
-        </activity>
-        <activity
-            android:name="br.edu.fasa.cv.presentation.ListaProduto"
-            android:label="@string/title_activity_cad_categoria" >
-        </activity>
+        <activity android:name=".presentation.CadCliente"/>
+        <activity android:name=".presentation.CadVenda"/>
+        <activity android:name=".presentation.CadProduto"/>
+        <activity android:name=".presentation.CadCategoria"/>
+        <activity android:name=".presentation.ListaCliente"/>
+        <activity android:name=".presentation.ListaCategoria"/>
+        <activity android:name=".presentation.ListaProduto"/>
+        <activity android:name=".presentation.InserirProduto"/>
     </application>
 
 </manifest>

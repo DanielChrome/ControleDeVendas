@@ -11,7 +11,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="5sp"
             android:textSize="25sp"
-            android:textColor="@color/CinzaEscuro"
+            android:textColor="@color/CinzaClaro"
         />
         <TextView
             android:id="@+id/listtelefone"
@@ -19,6 +19,6 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="5sp"
             android:textSize="15sp"
-            android:textColor="@color/CinzaEscuro"
+            android:textColor="@color/CinzaClaro"
         />
 </LinearLayout>

@@ -6,6 +6,7 @@ import android.content.Context;
 import br.edu.fasa.cv.domainmodel.Cliente;
 
 import com.db4o.ObjectSet;
+import com.db4o.query.Query;
 
 public class ClienteDAO extends DAOGenerico<Cliente>{
 	private Cliente c;
@@ -22,7 +23,11 @@ public class ClienteDAO extends DAOGenerico<Cliente>{
 	}
 	
 	public List<Cliente> listarTodos(){
-		return db().queryByExample(Cliente.class);
+		Query query=db().query();
+		query.constrain(Cliente.class);
+		query.descend("nome").orderAscending();
+		ObjectSet<Cliente> result=query.execute();
+		return result;
 	}
 	
 	public Cliente abrir(Cliente cli){

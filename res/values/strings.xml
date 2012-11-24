@@ -40,6 +40,20 @@
     <string name="delete_message">Confirma exclusão?</string>
     <string name="sim">Sim</string>
     <string name="nao">Não</string>
+    <string name="cliente">Cliente</string>
+    <string name="prazopgto">Prazo de pagamento</string>
+    <string name="cadvenda">Cadastro de Vendas</string>
+    <string name="total">Total:</string>
+    <string name="quantidade">Quantidade</string>
+	
+    <string-array name="prazo">
+		<item>A Vista</item>
+		<item>30 dias</item>
+		<item>30/60</item>
+		<item>30/60/90</item>
+		<item>30/60/90/120</item>
+		<item>30/60/90/120/180</item>
+	</string-array>
     
     
 

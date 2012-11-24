@@ -53,9 +53,8 @@ public class Produto {
 		this.categoria = categoria;
 	}
 	
-	
-	
-	
-	
-	
+	@Override
+	public String toString() {
+		return descricao;
+	}
 }

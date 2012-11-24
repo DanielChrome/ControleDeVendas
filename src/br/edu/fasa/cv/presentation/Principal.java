@@ -40,7 +40,7 @@ public class Principal extends Activity implements
     	Intent i = new Intent(this,Principal.class);;
     	switch(v.getId()){
     		case R.id.cadvenda:
-    			//i = new Intent(this,CadCliente.class);
+    			i = new Intent(this,CadVenda.class);
     			break;
     		case R.id.cadproduto:
     			i = new Intent(this,CadProduto.class);
