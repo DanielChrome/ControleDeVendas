@@ -1,0 +1,19 @@
+Documento de Levantamento de Requisitos
+
+Projeto: Controle de Vendas
+
+Requisitos Funcionais
+1.	O sistema deve permitir que seja cadastrado categoria de produtos, produtos e cliente.
+2.	O sistema deve permitir que seja realizado uma venda, selecionando os itens cadastrados no requisito fucional 1.
+3.  O sistema deve permitir a consulta, edição e deleção dos itens cidatos no requisito funcional 1.
+4.  O sistema deve permitir o faturamento de documentos gerados através da rotina de vendas.
+
+Requisitos Não-Funcionais
+Confiabilidade
+	O sistema deve se mostrar confiável ao usuário, garantindo que seus dados não se percam e não se corrompam com o uso.
+Portabilidade
+	Por ser desenvolvido em plataforma android, a portabilidade já é implicita.
+Segurança
+	O sistema deve permitir a segurança e integridade dos dados e informações lançados no sistema
+Usabilidade
+	O layout deve favorecer telas pequenas de aparelhos móveis, ter icones e campos grandes para facilitar o toque em telas touch.
