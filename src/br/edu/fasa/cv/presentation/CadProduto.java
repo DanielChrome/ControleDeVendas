@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -52,12 +51,6 @@ public class CadProduto extends Activity {
 		habilitaDesabilitaMenu(true, true, true, false, false, true);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_cadastro, menu);
-		return true;
-	}
-
 	public void Salvar() {
 
 		Log.d("DB4O", "Tentando salvar");
@@ -100,6 +93,7 @@ public class CadProduto extends Activity {
 			if ("I".equals(mopcao)) {
 				Log.d("CV", "Entrou no I");
 				if (Util.validaCampo(this, descricao, "Nome")) {
+					produto = new Produto();
 					Salvar();
 				}
 			} else if ("A".equals(mopcao)) {
@@ -166,7 +160,10 @@ public class CadProduto extends Activity {
 			valor.setText(Double.toString(produto.getValor()));
 			categoria.setSelection(categorias.getPosition(produto
 					.getCategoria()));
+			descricao.requestFocus();
 		}
-		descricao.requestFocus();
+		else{
+    		habilitaDesabilitaMenu(true, true, true, false, false, true);
+    	}
 	}
 }

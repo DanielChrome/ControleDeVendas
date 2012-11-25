@@ -5,7 +5,7 @@
     android:orientation="horizontal">
 
     <TextView
-        android:id="@+id/list_vnd_descricao"
+        android:id="@+id/list_vndp_descricao"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginLeft="5sp"
@@ -20,7 +20,7 @@
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/list_vnd_qtde"
+            android:id="@+id/list_vndp_qtde"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/total"
@@ -28,7 +28,7 @@
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/list_vnd_total"
+            android:id="@+id/list_vndp_total"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="50sp"

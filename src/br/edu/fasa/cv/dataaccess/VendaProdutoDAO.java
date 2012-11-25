@@ -1,5 +1,6 @@
 package br.edu.fasa.cv.dataaccess;
 
+import java.util.Iterator;
 import java.util.List;
 
 import android.content.Context;
@@ -16,12 +17,9 @@ public class VendaProdutoDAO extends DAOGenerico<VendaProduto>{
 	}
 	
 	public List<VendaProduto> buscaPorVenda(Venda venda){
-		List<VendaProduto> lista;
 		p = new VendaProduto();
-		p.setVenda(venda);
-		ObjectSet<VendaProduto> result = db().queryByExample(p);
-		lista = result;
-		return lista;
+		p.setVenda(venda);  
+		return db().queryByExample(p);
 	}
 	
 	public VendaProduto abrir(VendaProduto cat){
@@ -37,5 +35,14 @@ public class VendaProdutoDAO extends DAOGenerico<VendaProduto>{
 		return db().queryByExample(VendaProduto.class);
 	}
 	
+	public Double getTotalVenda(Venda v){
+		Double total = 0D;	
+		List<VendaProduto> l = buscaPorVenda(v);
+		Iterator<VendaProduto> i = l.iterator();
+		while(i.hasNext()){
+			total = total + i.next().getTotal();
+		}
+		return total;
+	}
 	
 }

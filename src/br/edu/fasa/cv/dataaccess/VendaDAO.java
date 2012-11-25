@@ -1,11 +1,13 @@
 package br.edu.fasa.cv.dataaccess;
 
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
 import android.content.Context;
 import android.util.Log;
 import br.edu.fasa.cv.domainmodel.Venda;
+
 import com.db4o.ObjectSet;
 
 public class VendaDAO extends DAOGenerico<Venda>{
@@ -15,7 +17,7 @@ public class VendaDAO extends DAOGenerico<Venda>{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public List<Venda> buscaPorData(String data){
+	public List<Venda> buscaPorData(Date data){
 		v = new Venda();
 		v.setDataVenda(data);
 		ObjectSet<Venda> result = db().queryByExample(v);

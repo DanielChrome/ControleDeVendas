@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -64,12 +63,6 @@ public class CadCategoria extends Activity {
 			}
 		});
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_cadastro, menu);
-        return true;
-    }
     
     public void Salvar(){
     	
@@ -114,6 +107,7 @@ public class CadCategoria extends Activity {
     			if ("I".equals(mopcao)){
     				Log.d("CV", "Entrou no I");
     				if(Util.validaCampo(this, descricao, "Nome")){
+    					categoria = new Categoria();
     					Salvar();
     				}   				
     			}else if("A".equals(mopcao)){
@@ -180,6 +174,9 @@ public class CadCategoria extends Activity {
     			categoriapai.setSelection(catpai.getPosition(categoria.getCategoriaPai()));	
     		}
     		descricao.requestFocus();
+    	}
+    	else{
+    		habilitaDesabilitaMenu(true, true, true, false, false, true);
     	}
     }
 }

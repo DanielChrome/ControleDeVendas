@@ -87,7 +87,7 @@
     <ListView
         android:id="@+id/vnd_listprd"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="120dp"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
         android:divider="@android:color/white"
@@ -116,7 +116,7 @@
             android:textColor="@color/CinzaEscuro"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:layout_marginRight="5dp"/>
+            android:layout_marginRight="10dp"/>
     </LinearLayout>
 
 

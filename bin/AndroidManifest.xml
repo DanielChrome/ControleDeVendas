@@ -27,6 +27,8 @@
         <activity android:name=".presentation.ListaCliente"/>
         <activity android:name=".presentation.ListaCategoria"/>
         <activity android:name=".presentation.ListaProduto"/>
+        <activity android:name=".presentation.ListaVenda"/>
+        <activity android:name=".presentation.ListaDocumento"/>
         <activity android:name=".presentation.InserirProduto"/>
     </application>
 

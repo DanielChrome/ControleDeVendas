@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginLeft="5sp"
-        android:textColor="@color/CinzaEscuro"
+        android:textColor="@color/CinzaClaro"
         android:textSize="25sp" />
 
     <LinearLayout

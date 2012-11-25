@@ -7,7 +7,7 @@ android:orientation="vertical"
 android:background="@color/CinzaClaro"
 >
         <ListView
-        android:id="@+id/listacliente"
+        android:id="@+id/lista"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="@android:color/white"

@@ -42,7 +42,7 @@ public class ListaCategoria extends Activity implements OnCreateContextMenuListe
         setContentView(R.layout.lista);
         cdao = new CategoriaDAO(getApplicationContext());
         //Pega a referencia do ListView
-        listView = (ListView) findViewById(R.id.listacliente);
+        listView = (ListView) findViewById(R.id.lista);
         //Define o Listener quando alguem clicar no item.
         registerForContextMenu(listView);
         itens = cdao.listarTodos();

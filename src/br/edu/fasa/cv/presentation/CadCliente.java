@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -39,12 +38,6 @@ public class CadCliente extends Activity {
         habilitaDesabilitaMenu(true, true, true, false, false, true);                 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_cadastro, menu);
-        return true;
-    }
-    
     public void Salvar(){
     	
     	Log.d("DB4O", "Tentando salvar");
@@ -84,6 +77,7 @@ public class CadCliente extends Activity {
     			if ("I".equals(mopcao)){
     				Log.d("CV", "Entrou no I");
     				if(Util.validaCampo(this, nome, "Nome")){
+    					cliente = new Cliente();
     					Salvar();
     				}   				
     			}else if("A".equals(mopcao)){
@@ -145,6 +139,9 @@ public class CadCliente extends Activity {
     		telefone.setText(cliente.getTelefone());
     		cliente = cdao.abrir(cliente);
     		nome.requestFocus();
+    	}
+    	else{
+    		habilitaDesabilitaMenu(true, true, true, false, false, true);
     	}
     }
 }

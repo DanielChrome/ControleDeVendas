@@ -60,9 +60,9 @@ public class AdapterVndProduto extends BaseAdapter {
 
         //atravez do layout pego pelo LayoutInflater, pegamos cada id relacionado
         //ao item e definimos as informações.
-        ((TextView) view.findViewById(R.id.list_vnd_descricao)).setText(item.getProduto().getDescricao());
-        ((TextView) view.findViewById(R.id.list_vnd_qtde)).setText(Double.toString(item.getQuantidade()));
-        ((TextView) view.findViewById(R.id.list_vnd_total)).setText(Double.toString(item.getTotal()));
+        ((TextView) view.findViewById(R.id.list_vndp_descricao)).setText(item.getProduto().getDescricao());
+        ((TextView) view.findViewById(R.id.list_vndp_qtde)).setText(Double.toString(item.getQuantidade()));
+        ((TextView) view.findViewById(R.id.list_vndp_total)).setText(Double.toString(item.getTotal()));
         return view;
     }
 }

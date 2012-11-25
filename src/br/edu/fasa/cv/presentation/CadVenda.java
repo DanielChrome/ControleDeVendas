@@ -1,18 +1,15 @@
 package br.edu.fasa.cv.presentation;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
@@ -50,15 +47,15 @@ public class CadVenda extends Activity {
 	TextView total;
 	String mopcao;
 	ImageButton[] opcao = new ImageButton[8];
-    
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.cad_venda);
-		cliente          = (Spinner) findViewById(R.id.vnd_spcliente);
-		prazo            = (Spinner) findViewById(R.id.vnd_spformapgto);
+		cliente = (Spinner) findViewById(R.id.vnd_spcliente);
+		prazo = (Spinner) findViewById(R.id.vnd_spformapgto);
 		listviewprodutos = (ListView) findViewById(R.id.vnd_listprd);
-		total    = (TextView) findViewById(R.id.vnd_txtotal); 
+		total = (TextView) findViewById(R.id.vnd_txtotal);
 		opcao[0] = (ImageButton) findViewById(R.id.vnd_incluir);
 		opcao[1] = (ImageButton) findViewById(R.id.vnd_alterar);
 		opcao[2] = (ImageButton) findViewById(R.id.vnd_pesquisar);
@@ -67,13 +64,13 @@ public class CadVenda extends Activity {
 		opcao[5] = (ImageButton) findViewById(R.id.vnd_voltar);
 		opcao[6] = (ImageButton) findViewById(R.id.vnd_incluirprd);
 		opcao[7] = (ImageButton) findViewById(R.id.vnd_removerprd);
-		produto  = new Produto();
-		venda    = new Venda();
-		ddao     = new DocumentoDAO(getApplicationContext());
-		pdao     = new ProdutoDAO(getApplicationContext());
-		cdao     = new ClienteDAO(getApplicationContext());
-		vdao     = new VendaDAO(getApplicationContext());
-		vpdao    = new VendaProdutoDAO(getApplicationContext());
+		produto = new Produto();
+		venda = new Venda();
+		ddao = new DocumentoDAO(getApplicationContext());
+		pdao = new ProdutoDAO(getApplicationContext());
+		cdao = new ClienteDAO(getApplicationContext());
+		vdao = new VendaDAO(getApplicationContext());
+		vpdao = new VendaProdutoDAO(getApplicationContext());
 		clientes = new ArrayAdapter<Cliente>(getApplicationContext(),
 				android.R.layout.simple_spinner_item, cdao.listarTodos());
 		listaprodutos = new ArrayList<VendaProduto>();
@@ -91,31 +88,24 @@ public class CadVenda extends Activity {
 		listviewprodutos.setAdapter(avp);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_cadastro, menu);
-		return true;
-	}
-
 	public void salvar() {
 		Iterator<VendaProduto> i = listaprodutos.iterator();
 		Log.d("DB4O", "Tentando salvar");
 		try {
 			venda.setId(vdao.proximoCodigo());
 			venda.setCliente((Cliente) cliente.getSelectedItem());
-			venda.setDataVenda(new SimpleDateFormat("yyyy/MM/dd", Locale.US)
-					.format(Calendar.getInstance().getTime()).toString());
+			venda.setDataVenda(Calendar.getInstance().getTime());
 			vdao.salvar(venda);
 			while (i.hasNext()) {
 				vp = i.next();
 				vp.setVenda(venda);
 				vpdao.salvar(vp);
 				produto = pdao.abrir(vp.getProduto());
-				produto.setEstoque(produto.getEstoque()-vp.getQuantidade());
+				produto.setEstoque(produto.getEstoque() - vp.getQuantidade());
+				pdao.salvar(produto);
 			}
 			geraReceber();
-			Util.toast(
-					this,
+			Util.toast(this,
 					"Venda salva com sucesso!\nCódigo: " + venda.getId())
 					.show();
 			habilitaDesabilitaMenu(true, true, true, false, false, true, false,
@@ -132,7 +122,8 @@ public class CadVenda extends Activity {
 		case R.id.vnd_incluir:
 			mopcao = "I";
 			habilitaDesabilitaEditText(true);
-			habilitaDesabilitaMenu(false, false, false, true, true, true, true, true);
+			habilitaDesabilitaMenu(false, false, false, true, true, true, true,
+					true);
 			venda.setId(vdao.proximoCodigo());
 			cliente.requestFocus();
 			break;
@@ -144,12 +135,13 @@ public class CadVenda extends Activity {
 			break;
 		case R.id.vnd_pesquisar:
 			mopcao = "P";
-			startActivityForResult(new Intent(this, ListaProduto.class), 1);
+			startActivityForResult(new Intent(this, ListaVenda.class), 1);
 			break;
 		case R.id.vnd_confirmar:
 			if ("I".equals(mopcao)) {
 				Log.d("CV", "Entrou no I");
 				if (!listaprodutos.isEmpty()) {
+					venda = new Venda();
 					salvar();
 				} else {
 					Util.toast(getApplicationContext(),
@@ -224,61 +216,65 @@ public class CadVenda extends Activity {
 			vp.setQuantidade(b.getInt("quantidade"));
 			listaprodutos.add(vp);
 			preencheListaProduto();
-			total.setText(formata(
-					Double.parseDouble(total.getText().toString()) +
-					vp.getTotal())
-					);
+			total.setText(formata(Double
+					.parseDouble(total.getText().toString()) + vp.getTotal()));
+		}else if(resultCode == ListaVenda.CONTEXTMENUITEM_EDIT) {
+			habilitaDesabilitaMenu(false, true, true, false, false, true, true,
+					true);
+			mopcao = "A";
+			Bundle b = data.getExtras();
+			habilitaDesabilitaEditText(true);
+			venda.setId(b.getLong("ID"));
+			vdao.abrir(venda);
+			cliente.setSelection(clientes.getPosition(venda.getCliente()));
+			listaprodutos = vpdao.buscaPorVenda(venda);
+			preencheListaProduto();
+			cliente.requestFocus();
+		}else{
+			habilitaDesabilitaMenu(true, true, true, false, false, true, false,
+					false);
 		}
-		/*
-		 * if (resultCode == ListaProduto.CONTEXTMENUITEM_EDIT) {
-		 * habilitaDesabilitaMenu(false, true, true, false, false, true, true,
-		 * true); mopcao = "A"; Bundle b = data.getExtras();
-		 * habilitaDesabilitaEditText(true); venda.setId(b.getLong("id"));
-		 * vdao.abrir(venda);
-		 * cliente.setSelection(clientes.getPosition(venda.getCliente()));
-		 * listaprodutos = vpdao.buscaPorVenda(venda); preencheListaProduto();
-		 * cliente.requestFocus(); }
-		 */
 	}
-	
-	public static String formata(double x) {  
-	    return String.format("%.2f", x);  
+
+	public static String formata(double x) {
+		return String.format("%.2f", x);
 	}
-	
-	public void geraReceber(){
+
+	public void geraReceber() {
 		Log.d("CV", "Posicao: " + prazo.getSelectedItemPosition());
 		int vezes = prazo.getSelectedItemPosition();
 		Date dataatual = Calendar.getInstance().getTime();
-		if (vezes > 0){
-			while(vezes >= 1){
+		if (vezes > 0) {
+			while (vezes >= 1) {
 				doc = new Documento();
 				doc.setVenda(venda);
 				doc.setDocumento(ddao.proximoCodigo());
 				doc.setFaturado(false);
-				dataatual.setMonth(dataatual.getMonth()+1);
-				doc.setDataVencimento(new SimpleDateFormat("yyyy/MM/dd", Locale.US)
-					.format(dataatual).toString());
+				doc.setValor(Double.parseDouble(total.getText().toString())
+						/ vezes);
+				dataatual.setMonth(dataatual.getMonth() + 1);
+				doc.setDataVencimento(dataatual);
 				vezes--;
-				try{
+				try {
 					ddao.salvar(doc);
-				}catch(Exception e){
-					Util.toast(getApplicationContext(), "Erro ao gravar documento "+doc.getDocumento());
+				} catch (Exception e) {
+					Util.toast(getApplicationContext(),
+							"Erro ao gravar documento " + doc.getDocumento());
 				}
 			}
-		}else{
+		} else {
 			doc = new Documento();
 			doc.setVenda(venda);
 			doc.setDocumento(ddao.proximoCodigo());
 			doc.setFaturado(true);
-			dataatual.setMonth(dataatual.getMonth()+1);
-			doc.setDataVencimento(new SimpleDateFormat("yyyy/MM/dd", Locale.US)
-				.format(Calendar.getInstance().getTime()).toString());
-			try{
+			doc.setDataVencimento(Calendar.getInstance().getTime());
+			try {
 				ddao.salvar(doc);
-			}catch(Exception e){
-				Util.toast(getApplicationContext(), "Erro ao gravar documento "+doc.getDocumento());
+			} catch (Exception e) {
+				Util.toast(getApplicationContext(), "Erro ao gravar documento "
+						+ doc.getDocumento());
 			}
 		}
-			
+
 	}
 }

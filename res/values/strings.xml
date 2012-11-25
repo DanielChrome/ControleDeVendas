@@ -18,7 +18,7 @@
     <string name="title_activity_lista">Lista</string>
     <string name="title_activity_cad_produto">CadProduto</string>
     <string name="title_activity_cad_categoria">CadCategoria</string>
-    <string name="cadcategoria">Cadastro de Categorias</string>
+    <string name="cadcategoria">Cadastro de Categorias de Produtos	</string>
     <string name="cadproduto">Cadastro de Produtos</string>
     <string name="estoque">Estoque</string>
     <string name="valor">Valor R$</string>
@@ -45,16 +45,18 @@
     <string name="cadvenda">Cadastro de Vendas</string>
     <string name="total">Total:</string>
     <string name="quantidade">Quantidade</string>
-	
+    <string name="receber">Receber</string>
+    <string name="fatura_title">Faturar</string>
+    <string name="fatura_message">Confirma pagamento de documento?</string>
+    <string name="faturar">Faturar documento</string>
+
     <string-array name="prazo">
-		<item>A Vista</item>
-		<item>30 dias</item>
-		<item>30/60</item>
-		<item>30/60/90</item>
-		<item>30/60/90/120</item>
-		<item>30/60/90/120/180</item>
-	</string-array>
-    
-    
+        <item>A Vista</item>
+        <item>30 dias</item>
+        <item>30/60</item>
+        <item>30/60/90</item>
+        <item>30/60/90/120</item>
+        <item>30/60/90/120/180</item>
+    </string-array>
 
 </resources>

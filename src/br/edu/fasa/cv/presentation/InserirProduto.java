@@ -3,7 +3,6 @@ package br.edu.fasa.cv.presentation;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -63,12 +62,6 @@ public class InserirProduto extends Activity {
 				
 			}
 		});
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_cadastro, menu);
-		return true;
 	}
 
 	public void executaOpcao(View v) {

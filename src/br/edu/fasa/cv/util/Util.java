@@ -1,5 +1,9 @@
 package br.edu.fasa.cv.util;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface.OnClickListener;
@@ -79,4 +83,16 @@ public class Util {
     	}
     	return true;
     }
+	
+	public static Date strToDate(String data){
+		Date dt = new Date(data);
+		return dt;
+	}
+	
+	public static String dateToStr(Date data){
+		return new SimpleDateFormat("dd/MM/yyyy", Locale.US)
+		.format(data).toString();
+	}
+
 }
+

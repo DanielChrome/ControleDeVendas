@@ -3,7 +3,6 @@ package br.edu.fasa.cv.presentation;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnCreateContextMenuListener;
 import android.widget.ImageButton;
@@ -24,16 +23,9 @@ public class Principal extends Activity implements
         menu[2] = (ImageButton) findViewById(R.id.cadcliente);
         menu[3] = (ImageButton) findViewById(R.id.cadcategoria);
         menu[4] = (ImageButton) findViewById(R.id.relatorios);
-        menu[5] = (ImageButton) findViewById(R.id.configuracoes);
+        menu[5] = (ImageButton) findViewById(R.id.receber);
         
         menu[4].setEnabled(false);
-        menu[5].setEnabled(false);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_principal, menu);
-        return true;
     }
     
     public void executaOpcao(View v){
@@ -54,8 +46,8 @@ public class Principal extends Activity implements
     		case R.id.relatorios:
     			//i = new Intent(this,CadCliente.class);
     			break;
-    		case R.id.configuracoes:
-    			//i = new Intent(this,CadCliente.class);
+    		case R.id.receber:
+    			i = new Intent(this,ListaDocumento.class);
     			break;
     		default:
     			i = new Intent(this,Principal.class);

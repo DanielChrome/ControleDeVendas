@@ -1,5 +1,7 @@
 package br.edu.fasa.cv.dataaccess;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -8,15 +10,16 @@ import android.util.Log;
 import br.edu.fasa.cv.domainmodel.Documento;
 
 import com.db4o.ObjectSet;
+import com.db4o.query.Constraint;
+import com.db4o.query.Query;
 
 public class DocumentoDAO extends DAOGenerico<Documento>{
 	private Documento doc;
 	public DocumentoDAO(Context ctx) {
 		super(ctx);
-		// TODO Auto-generated constructor stub
 	}
 	
-	public List<Documento> buscaPorData(String data){
+	public List<Documento> buscaPorData(Date data){
 		doc = new Documento();
 		doc.setDataVencimento(data);
 		ObjectSet<Documento> result = db().queryByExample(doc);
@@ -51,5 +54,15 @@ public class DocumentoDAO extends DAOGenerico<Documento>{
 			Log.d("CV","No ID: "+id);
 			return 1L;
 		}	
+	}
+	
+	public List<Documento> listaAVencer(){
+		Query query=db().query();
+		query.constrain(Documento.class);
+		Constraint constr=query.descend("faturado")
+		        .constrain(false);
+		query.descend("datavencimento")
+		        .constrain(Calendar.getInstance().getTime()).greater().equal().and(constr);
+		return query.execute();		
 	}
 }

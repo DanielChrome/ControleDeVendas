@@ -1,22 +1,26 @@
 package br.edu.fasa.cv.domainmodel;
 
+import java.util.Date;
+
 public class Documento {
 	private long documento;
-	private String dataVencimento;
+	private Date datavencimento;
 	private boolean faturado;
 	private Venda venda;
+	private Double valor;
 	
 	public Documento(){
 		
 	}
 	
-	public Documento(long documento, String dataVencimento, boolean faturado,
-			Venda venda) {
+	public Documento(long documento, Date dataVencimento, boolean faturado,
+			Venda venda,Double valor) {
 		super();
 		this.documento = documento;
-		this.dataVencimento = dataVencimento;
+		this.datavencimento = dataVencimento;
 		this.faturado = faturado;
 		this.venda = venda;
+		this.valor = valor;
 	}
 
 	public long getDocumento() {
@@ -27,12 +31,12 @@ public class Documento {
 		this.documento = documento;
 	}
 
-	public String getDataVencimento() {
-		return dataVencimento;
+	public Date getDataVencimento() {
+		return datavencimento;
 	}
 
-	public void setDataVencimento(String dataVencimento) {
-		this.dataVencimento = dataVencimento;
+	public void setDataVencimento(Date dataVencimento) {
+		this.datavencimento = dataVencimento;
 	}
 
 	public boolean isFaturado() {
@@ -50,5 +54,14 @@ public class Documento {
 	public void setVenda(Venda venda) {
 		this.venda = venda;
 	}
+
+	public Double getValor() {
+		return valor;
+	}
+
+	public void setValor(Double valor) {
+		this.valor = valor;
+	}
+	
 	
 }

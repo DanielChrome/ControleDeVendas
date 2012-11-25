@@ -1,15 +1,17 @@
 package br.edu.fasa.cv.domainmodel;
 
+import java.util.Date;
+
 public class Venda {
 	private long id;
 	private Cliente cliente;
-	private String dataVenda;
+	private Date dataVenda;
 	
 	public Venda(){
 		
 	}
 
-	public Venda(long id,Cliente cliente, String dataVenda) {
+	public Venda(long id,Cliente cliente, Date dataVenda) {
 		super();
 		this.id = id;
 		this.cliente = cliente;
@@ -32,11 +34,11 @@ public class Venda {
 		this.cliente = cliente;
 	}
 
-	public String getDataVenda() {
+	public Date getDataVenda() {
 		return dataVenda;
 	}
 
-	public void setDataVenda(String dataVenda) {
+	public void setDataVenda(Date dataVenda) {
 		this.dataVenda = dataVenda;
 	}
 }
