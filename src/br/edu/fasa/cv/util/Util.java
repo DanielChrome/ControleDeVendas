@@ -48,8 +48,8 @@ public class Util {
 		return builder.create();
 	}
 	
-	public static Toast toast(Context ctx,String message){
-		return Toast.makeText(ctx,message,Toast.LENGTH_SHORT);
+	public static void toast(Context ctx,String message){
+		Toast.makeText(ctx,message,Toast.LENGTH_SHORT).show();
 	}
 	
 	/**
@@ -77,7 +77,7 @@ public class Util {
 	 */
 	public static Boolean validaCampo(Context ctx,EditText e,String campo){
 		if ((e.getText().toString() == null) ||("".equals(e.getText().toString().trim()))){
-			toast(ctx, "Campo "+campo+" não pode ficar vazio").show();
+			toast(ctx, "Campo "+campo+" não pode ficar vazio");
     		e.requestFocus();
     		return false;
     	}

@@ -46,12 +46,12 @@ public class CadCliente extends Activity {
     		cliente.setEndereco(endereco.getText().toString());
     		cliente.setTelefone(telefone.getText().toString());
     		cdao.salvar(cliente);    		
-    		Util.toast(this, "Cliente "+ cliente.getNome()+ " salvo com sucesso!").show();
+    		Util.toast(this, "Cliente "+ cliente.getNome()+ " salvo com sucesso!");
     		habilitaDesabilitaMenu(true, true, true, false, false, true);
     		habilitaDesabilitaEditText(false);
     	}catch(Exception e){    		
     		Log.d("DB4O", "Erro ao salvar"+e);
-    		Util.toast(this, "Erro ao salvar cliente!").show();
+    		Util.toast(this, "Erro ao salvar cliente!");
     	}
     }
     
@@ -70,8 +70,12 @@ public class CadCliente extends Activity {
     			break;
     		case R.id.cli_pesquisar:
     			mopcao = "P";
-    			habilitaDesabilitaMenu(false, true, true, false, false, true);
-    			startActivityForResult(new Intent(this,ListaCliente.class),1);
+    			if(cdao.listarTodos().size()>0){
+    				habilitaDesabilitaMenu(false, true, true, false, false, true);
+        			startActivityForResult(new Intent(this,ListaCliente.class),1);
+    			}else{
+    				Util.toast(getApplicationContext(), "Nenhum cliente cadastrado!");
+    			}
     			break;
     		case R.id.cli_confirmar:
     			if ("I".equals(mopcao)){

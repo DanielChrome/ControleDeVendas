@@ -71,16 +71,28 @@ public class CadVenda extends Activity {
 		cdao = new ClienteDAO(getApplicationContext());
 		vdao = new VendaDAO(getApplicationContext());
 		vpdao = new VendaProdutoDAO(getApplicationContext());
-		clientes = new ArrayAdapter<Cliente>(getApplicationContext(),
-				android.R.layout.simple_spinner_item, cdao.listarTodos());
-		listaprodutos = new ArrayList<VendaProduto>();
-		Log.d("CV", "Cliente " + clientes.getCount());
-		cliente.setAdapter(clientes);
-		habilitaDesabilitaEditText(false);
-		habilitaDesabilitaMenu(true, true, true, false, false, true, false,
-				false);
-		preencheListaProduto();
-		total.setText(formata(0));
+
+		if (cdao.listarTodos().size() == 0) {
+			Util.toast(getApplicationContext(),
+					"Cadastre no mínimo um cliente para realizar uma venda!");
+			finish();
+		} else if (pdao.listarTodos().size() == 0) {
+			Util.toast(getApplicationContext(),
+					"Cadastre no mínimo um produto para realizar uma venda!");
+			finish();
+		} else {
+			clientes = new ArrayAdapter<Cliente>(getApplicationContext(),
+					android.R.layout.simple_spinner_item,
+					cdao.listarTodosOrdemNome());
+			listaprodutos = new ArrayList<VendaProduto>();
+			Log.d("CV", "Cliente " + clientes.getCount());
+			cliente.setAdapter(clientes);
+			habilitaDesabilitaEditText(false);
+			habilitaDesabilitaMenu(true, true, true, false, false, true, false,
+					false);
+			preencheListaProduto();
+			total.setText(formata(0));
+		}
 	}
 
 	public void preencheListaProduto() {
@@ -106,14 +118,13 @@ public class CadVenda extends Activity {
 			}
 			geraReceber();
 			Util.toast(this,
-					"Venda salva com sucesso!\nCódigo: " + venda.getId())
-					.show();
+					"Venda salva com sucesso!\nCódigo: " + venda.getId());
 			habilitaDesabilitaMenu(true, true, true, false, false, true, false,
 					false);
 			habilitaDesabilitaEditText(false);
 		} catch (Exception e) {
 			Log.d("DB4O", "Erro ao salvar" + e);
-			Util.toast(this, "Erro ao salvar venda!").show();
+			Util.toast(this, "Erro ao salvar venda!");
 		}
 	}
 
@@ -135,7 +146,12 @@ public class CadVenda extends Activity {
 			break;
 		case R.id.vnd_pesquisar:
 			mopcao = "P";
-			startActivityForResult(new Intent(this, ListaVenda.class), 1);
+			if (vdao.listarTodos().size() > 0) {
+				startActivityForResult(new Intent(this, ListaVenda.class), 1);
+			} else {
+				Util.toast(getApplicationContext(), "Nenhuma venda cadastrada!");
+			}
+
 			break;
 		case R.id.vnd_confirmar:
 			if ("I".equals(mopcao)) {
@@ -218,7 +234,7 @@ public class CadVenda extends Activity {
 			preencheListaProduto();
 			total.setText(formata(Double
 					.parseDouble(total.getText().toString()) + vp.getTotal()));
-		}else if(resultCode == ListaVenda.CONTEXTMENUITEM_EDIT) {
+		} else if (resultCode == ListaVenda.CONTEXTMENUITEM_EDIT) {
 			habilitaDesabilitaMenu(false, true, true, false, false, true, true,
 					true);
 			mopcao = "A";
@@ -230,7 +246,7 @@ public class CadVenda extends Activity {
 			listaprodutos = vpdao.buscaPorVenda(venda);
 			preencheListaProduto();
 			cliente.requestFocus();
-		}else{
+		} else {
 			habilitaDesabilitaMenu(true, true, true, false, false, true, false,
 					false);
 		}
@@ -243,6 +259,7 @@ public class CadVenda extends Activity {
 	public void geraReceber() {
 		Log.d("CV", "Posicao: " + prazo.getSelectedItemPosition());
 		int vezes = prazo.getSelectedItemPosition();
+		int parcelas = vezes;
 		Date dataatual = Calendar.getInstance().getTime();
 		if (vezes > 0) {
 			while (vezes >= 1) {
@@ -251,7 +268,7 @@ public class CadVenda extends Activity {
 				doc.setDocumento(ddao.proximoCodigo());
 				doc.setFaturado(false);
 				doc.setValor(Double.parseDouble(total.getText().toString())
-						/ vezes);
+						/ parcelas);
 				dataatual.setMonth(dataatual.getMonth() + 1);
 				doc.setDataVencimento(dataatual);
 				vezes--;

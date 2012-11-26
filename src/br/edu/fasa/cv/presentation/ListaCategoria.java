@@ -45,7 +45,7 @@ public class ListaCategoria extends Activity implements OnCreateContextMenuListe
         listView = (ListView) findViewById(R.id.lista);
         //Define o Listener quando alguem clicar no item.
         registerForContextMenu(listView);
-        itens = cdao.listarTodos();
+        itens = cdao.listarTodosOrdemDescricao();
         createListView();
     }
 
@@ -100,7 +100,7 @@ public class ListaCategoria extends Activity implements OnCreateContextMenuListe
 				public void onClick(DialogInterface dialog, int which) {
 					cdao.deletar(categoria);
 					dialog.dismiss();
-					Util.toast(getApplicationContext(), "Categoria excluida com sucesso!").show();
+					Util.toast(getApplicationContext(), "Categoria excluida com sucesso!");
 					itens = cdao.listarTodos();
 					createListView();
 				}

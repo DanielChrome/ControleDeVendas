@@ -7,6 +7,16 @@ import android.view.View;
 import android.view.View.OnCreateContextMenuListener;
 import android.widget.ImageButton;
 import br.edu.fasa.cv.R;
+import br.edu.fasa.cv.dataaccess.CategoriaDAO;
+import br.edu.fasa.cv.dataaccess.ClienteDAO;
+import br.edu.fasa.cv.dataaccess.DocumentoDAO;
+import br.edu.fasa.cv.dataaccess.ProdutoDAO;
+import br.edu.fasa.cv.dataaccess.VendaDAO;
+import br.edu.fasa.cv.domainmodel.Categoria;
+import br.edu.fasa.cv.domainmodel.Cliente;
+import br.edu.fasa.cv.domainmodel.Documento;
+import br.edu.fasa.cv.domainmodel.Produto;
+import br.edu.fasa.cv.domainmodel.Venda;
 
 public class Principal extends Activity implements
     OnCreateContextMenuListener{

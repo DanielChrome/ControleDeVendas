@@ -31,24 +31,31 @@ public class CadProduto extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.cad_produto);
 
-		descricao = (EditText)    findViewById(R.id.prd_eddescricao);
-		estoque   = (EditText)    findViewById(R.id.prd_edestoque);
-		valor     = (EditText)    findViewById(R.id.prd_edvalor);
-		categoria = (Spinner)     findViewById(R.id.prd_spcategoria);
-		opcao[0]  = (ImageButton) findViewById(R.id.prd_incluir);
-		opcao[1]  = (ImageButton) findViewById(R.id.prd_alterar);
-		opcao[2]  = (ImageButton) findViewById(R.id.prd_pesquisar);
-		opcao[3]  = (ImageButton) findViewById(R.id.prd_confirmar);
-		opcao[4]  = (ImageButton) findViewById(R.id.prd_cancelar);
-		opcao[5]  = (ImageButton) findViewById(R.id.prd_voltar);
+		descricao = (EditText) findViewById(R.id.prd_eddescricao);
+		estoque = (EditText) findViewById(R.id.prd_edestoque);
+		valor = (EditText) findViewById(R.id.prd_edvalor);
+		categoria = (Spinner) findViewById(R.id.prd_spcategoria);
+		opcao[0] = (ImageButton) findViewById(R.id.prd_incluir);
+		opcao[1] = (ImageButton) findViewById(R.id.prd_alterar);
+		opcao[2] = (ImageButton) findViewById(R.id.prd_pesquisar);
+		opcao[3] = (ImageButton) findViewById(R.id.prd_confirmar);
+		opcao[4] = (ImageButton) findViewById(R.id.prd_cancelar);
+		opcao[5] = (ImageButton) findViewById(R.id.prd_voltar);
 		produto = new Produto();
 		pdao = new ProdutoDAO(getApplicationContext());
 		cdao = new CategoriaDAO(getApplicationContext());
-		categorias = new ArrayAdapter<Categoria>(getApplicationContext(),
-				android.R.layout.simple_spinner_item, cdao.listarTodos());
-		categoria.setAdapter(categorias);
-		habilitaDesabilitaEditText(false);
-		habilitaDesabilitaMenu(true, true, true, false, false, true);
+		if (cdao.listarTodos().size() == 0) {
+			Util.toast(getApplicationContext(),
+					"Cadastre no mínimo uma categoria para cadastrar um produto!");
+			finish();
+		} else {
+			categorias = new ArrayAdapter<Categoria>(getApplicationContext(),
+					android.R.layout.simple_spinner_item,
+					cdao.listarTodosOrdemDescricao());
+			categoria.setAdapter(categorias);
+			habilitaDesabilitaEditText(false);
+			habilitaDesabilitaMenu(true, true, true, false, false, true);
+		}
 	}
 
 	public void Salvar() {
@@ -60,14 +67,13 @@ public class CadProduto extends Activity {
 			produto.setValor(Double.parseDouble(valor.getText().toString()));
 			produto.setCategoria((Categoria) categoria.getSelectedItem());
 			pdao.salvar(produto);
-			Util.toast(this,
-					"Produto " + produto.getDescricao() + " salvo com sucesso!")
-					.show();
+			Util.toast(this, "Produto " + produto.getDescricao()
+					+ " salvo com sucesso!");
 			habilitaDesabilitaMenu(true, true, true, false, false, true);
 			habilitaDesabilitaEditText(false);
 		} catch (Exception e) {
 			Log.d("DB4O", "Erro ao salvar" + e);
-			Util.toast(this, "Erro ao salvar produto!").show();
+			Util.toast(this, "Erro ao salvar produto!");
 		}
 	}
 
@@ -86,8 +92,13 @@ public class CadProduto extends Activity {
 			break;
 		case R.id.prd_pesquisar:
 			mopcao = "P";
-			habilitaDesabilitaMenu(false, true, true, false, false, true);
-			startActivityForResult(new Intent(this, ListaProduto.class), 1);
+			if (pdao.listarTodos().size() > 0) {
+				habilitaDesabilitaMenu(false, true, true, false, false, true);
+				startActivityForResult(new Intent(this, ListaProduto.class), 1);
+			} else {
+				Util.toast(getApplicationContext(),
+						"Nenhum produto cadastrado!");
+			}
 			break;
 		case R.id.prd_confirmar:
 			if ("I".equals(mopcao)) {
@@ -161,9 +172,8 @@ public class CadProduto extends Activity {
 			categoria.setSelection(categorias.getPosition(produto
 					.getCategoria()));
 			descricao.requestFocus();
+		} else {
+			habilitaDesabilitaMenu(true, true, true, false, false, true);
 		}
-		else{
-    		habilitaDesabilitaMenu(true, true, true, false, false, true);
-    	}
 	}
 }

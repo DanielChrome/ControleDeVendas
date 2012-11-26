@@ -101,7 +101,7 @@ public class ListaProduto extends Activity implements OnCreateContextMenuListene
 				public void onClick(DialogInterface dialog, int which) {
 					pdao.deletar(produto);
 					dialog.dismiss();
-					Util.toast(getApplicationContext(), "Produto excluido com sucesso!").show();
+					Util.toast(getApplicationContext(), "Produto excluido com sucesso!");
 					itens = pdao.listarTodos();
 					createListView();
 				}

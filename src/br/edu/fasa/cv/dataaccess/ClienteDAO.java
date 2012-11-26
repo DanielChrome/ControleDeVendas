@@ -22,12 +22,16 @@ public class ClienteDAO extends DAOGenerico<Cliente>{
 		return result;
 	}
 	
-	public List<Cliente> listarTodos(){
+	public List<Cliente> listarTodosOrdemNome(){
 		Query query=db().query();
 		query.constrain(Cliente.class);
 		query.descend("nome").orderAscending();
 		ObjectSet<Cliente> result=query.execute();
 		return result;
+	}
+	
+	public List<Cliente> listarTodos(){
+		return db().queryByExample(Cliente.class);
 	}
 	
 	public Cliente abrir(Cliente cli){

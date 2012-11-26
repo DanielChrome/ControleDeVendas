@@ -88,7 +88,7 @@ public class ListaDocumento extends Activity implements
 					ddao.salvar(docselect);
 					dialog.dismiss();
 					Util.toast(getApplicationContext(),
-							"Documento faturado com sucesso!").show();
+							"Documento faturado com sucesso!");
 					itens = ddao.listaAVencer();
 					createListView();
 				}

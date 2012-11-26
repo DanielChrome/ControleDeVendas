@@ -76,12 +76,12 @@ public class CadCategoria extends Activity {
     			categoria.setCategoriaPai(null);
     		}   			
     		cdao.salvar(categoria);    		
-    		Util.toast(this, "Categoria "+ categoria.getDescricao()+ " salva com sucesso!").show();
+    		Util.toast(this, "Categoria "+ categoria.getDescricao()+ " salva com sucesso!");
     		habilitaDesabilitaMenu(true, true, true, false, false, true);
     		habilitaDesabilitaEditText(false);
     	}catch(Exception e){    		
     		Log.d("DB4O", "Erro ao salvar"+e);
-    		Util.toast(this, "Erro ao salvar categoria!").show();
+    		Util.toast(this, "Erro ao salvar categoria!");
     	}
     }
     
@@ -100,8 +100,12 @@ public class CadCategoria extends Activity {
     			break;
     		case R.id.cat_pesquisar:
     			mopcao = "P";
-    			habilitaDesabilitaMenu(false, true, true, false, false, true);
-    			startActivityForResult(new Intent(this,ListaCategoria.class),1);
+    			if(cdao.listarTodos().size()>0){
+    				habilitaDesabilitaMenu(false, true, true, false, false, true);
+        			startActivityForResult(new Intent(this,ListaCategoria.class),1);
+    			}else{
+    				Util.toast(getApplicationContext(), "Nenhuma Categoria cadastrada!");
+    			}
     			break;
     		case R.id.cat_confirmar:
     			if ("I".equals(mopcao)){

@@ -99,7 +99,7 @@ public class ListaVenda extends Activity implements OnCreateContextMenuListener{
 				public void onClick(DialogInterface dialog, int which) {
 					vdao.deletar(venda);
 					dialog.dismiss();
-					Util.toast(getApplicationContext(), "Produto excluido com sucesso!").show();
+					Util.toast(getApplicationContext(), "Produto excluido com sucesso!");
 					itens = vdao.listarTodos();
 					createListView();
 				}

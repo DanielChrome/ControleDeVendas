@@ -22,12 +22,16 @@ public class CategoriaDAO extends DAOGenerico<Categoria>{
 		return result;
 	}
 	
-	public List<Categoria> listarTodos(){
+	public List<Categoria> listarTodosOrdemDescricao(){
 		Query query=db().query();
 		query.constrain(Categoria.class);
 		query.descend("descricao").orderAscending();
 		ObjectSet<Categoria> result=query.execute();
 		return result;
+	}
+	
+	public List<Categoria> listarTodos(){
+		return db().queryByExample(Categoria.class);
 	}
 	
 	public Categoria abrir(Categoria cat){

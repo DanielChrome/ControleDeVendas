@@ -45,7 +45,7 @@ public class ListaCliente extends Activity implements OnCreateContextMenuListene
         listView = (ListView) findViewById(R.id.lista);
         //Define o Listener quando alguem clicar no item.
         registerForContextMenu(listView);
-        itens = cdao.listarTodos();
+        itens = cdao.listarTodosOrdemNome();
         createListView();
     }
 
@@ -101,7 +101,7 @@ public class ListaCliente extends Activity implements OnCreateContextMenuListene
 				public void onClick(DialogInterface dialog, int which) {
 					cdao.deletar(cliente);
 					dialog.dismiss();
-					Util.toast(getApplicationContext(), "Cliente excluido com sucesso!").show();
+					Util.toast(getApplicationContext(), "Cliente excluido com sucesso!");
 					itens = cdao.listarTodos();
 					createListView();
 				}
