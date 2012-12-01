@@ -91,8 +91,8 @@ public class CadVenda extends Activity {
 			habilitaDesabilitaMenu(true, true, true, false, false, true, false,
 					false);
 			preencheListaProduto();
-			total.setText(formata(0));
 		}
+		total.setText("0");
 	}
 
 	public void preencheListaProduto() {
@@ -232,8 +232,7 @@ public class CadVenda extends Activity {
 			vp.setQuantidade(b.getInt("quantidade"));
 			listaprodutos.add(vp);
 			preencheListaProduto();
-			total.setText(formata(Double
-					.parseDouble(total.getText().toString()) + vp.getTotal()));
+			total.setText(Double.toString(Double.parseDouble(total.getText().toString()) + vp.getTotal()));
 		} else if (resultCode == ListaVenda.CONTEXTMENUITEM_EDIT) {
 			habilitaDesabilitaMenu(false, true, true, false, false, true, true,
 					true);

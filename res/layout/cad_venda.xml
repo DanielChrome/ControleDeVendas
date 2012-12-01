@@ -10,14 +10,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/cadvenda"
-        android:textColor="@color/CinzaEscuro"
-        android:textSize="25sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/cliente"
         android:textColor="@color/CinzaEscuro" />
 
@@ -44,8 +36,8 @@
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:entries="@array/prazo"
         android:background="@drawable/bgspinner"
+        android:entries="@array/prazo"
         tools:listitem="@android:layout/simple_spinner_item" />
 
     <LinearLayout
@@ -83,16 +75,13 @@
             android:src="@drawable/refresh" />
     </LinearLayout>
 
-	
     <ListView
         android:id="@+id/vnd_listprd"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_height="100dp"
+        android:background="@android:drawable/alert_dark_frame"
         android:divider="@android:color/white"
-        android:dividerHeight="1sp"
-        android:background="@android:drawable/alert_dark_frame"/>
+        android:dividerHeight="1sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -103,22 +92,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
             android:text="@string/total"
             android:textColor="@color/CinzaEscuro"
-            android:layout_marginRight="5dp"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/vnd_txtotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
             android:textColor="@color/CinzaEscuro"
-            android:textStyle="bold"
             android:textSize="20sp"
-            android:layout_marginRight="10dp"/>
+            android:textStyle="bold" />
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="fill_parent"

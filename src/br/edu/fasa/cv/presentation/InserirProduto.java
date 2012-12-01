@@ -43,6 +43,7 @@ public class InserirProduto extends Activity {
 		produtos = new ArrayAdapter<Produto>(getApplicationContext(),
 				android.R.layout.simple_spinner_item, pdao.listarTodos());
 		spprodutos.setAdapter(produtos);
+		quantidade.setEnabled(true);
 		estoque.setText(Integer.toString(((Produto)spprodutos.getSelectedItem()).getEstoque()));
 		valor.setText(Double.toString(((Produto)spprodutos.getSelectedItem()).getValor()));
 		habilitaDesabilitaMenu(true, true, true);
