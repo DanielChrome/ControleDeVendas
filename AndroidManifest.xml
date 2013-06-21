@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.edu.fasa.cv"
     android:versionCode="1"
@@ -7,29 +8,39 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="16" />
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
     <application
+        android:allowBackup="false"
         android:icon="@drawable/converter_normal"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" 
-        android:allowBackup="false">
-        <activity
-            android:name="br.edu.fasa.cv.presentation.Principal" >
+        android:theme="@style/AppTheme" >
+        <activity android:name="br.edu.fasa.cv.presentation.Principal" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.CadCliente"/>
-        <activity android:name=".presentation.CadVenda"/>
-        <activity android:name=".presentation.CadProduto"/>
-        <activity android:name=".presentation.CadCategoria"/>
-        <activity android:name=".presentation.ListaCliente"/>
-        <activity android:name=".presentation.ListaCategoria"/>
-        <activity android:name=".presentation.ListaProduto"/>
-        <activity android:name=".presentation.ListaVenda"/>
-        <activity android:name=".presentation.ListaDocumento"/>
-        <activity android:name=".presentation.InserirProduto"/>
+        <activity android:name="br.edu.fasa.cv.presentation.CadCliente" />
+        <activity android:name="br.edu.fasa.cv.presentation.CadVenda" />
+        <activity android:name="br.edu.fasa.cv.presentation.CadProduto" />
+        <activity android:name="br.edu.fasa.cv.presentation.CadCategoria" />
+        <activity android:name="br.edu.fasa.cv.presentation.ListaCliente" />
+        <activity android:name="br.edu.fasa.cv.presentation.ListaCategoria" />
+        <activity android:name="br.edu.fasa.cv.presentation.ListaProduto" />
+        <activity android:name="br.edu.fasa.cv.presentation.ListaVenda" />
+        <activity android:name="br.edu.fasa.cv.presentation.ListaDocumento" />
+        <activity android:name="br.edu.fasa.cv.presentation.InserirProduto" />
+        <activity
+            android:name="br.edu.fasa.cv.Replicacao"
+            android:label="@string/title_activity_replicacao" >
+        </activity>
     </application>
 
 </manifest>

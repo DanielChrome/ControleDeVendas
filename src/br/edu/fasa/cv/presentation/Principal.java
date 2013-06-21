@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnCreateContextMenuListener;
 import android.widget.ImageButton;
+import android.widget.Toast;
 import br.edu.fasa.cv.R;
 import br.edu.fasa.cv.dataaccess.CategoriaDAO;
 import br.edu.fasa.cv.dataaccess.ClienteDAO;
@@ -32,10 +33,10 @@ public class Principal extends Activity implements
         menu[1] = (ImageButton) findViewById(R.id.cadproduto);
         menu[2] = (ImageButton) findViewById(R.id.cadcliente);
         menu[3] = (ImageButton) findViewById(R.id.cadcategoria);
-        menu[4] = (ImageButton) findViewById(R.id.relatorios);
+        menu[4] = (ImageButton) findViewById(R.id.replicar);
         menu[5] = (ImageButton) findViewById(R.id.receber);
         
-        menu[4].setEnabled(false);
+        //menu[4].setEnabled(false);
     }
     
     public void executaOpcao(View v){
@@ -53,8 +54,10 @@ public class Principal extends Activity implements
     		case R.id.cadcategoria:
     			i = new Intent(this,CadCategoria.class);
     			break;
-    		case R.id.relatorios:
-    			//i = new Intent(this,CadCliente.class);
+    		case R.id.replicar:
+    			Replicacao r = new Replicacao();
+    			r.ctx = getApplicationContext();
+    			r.execute(0);
     			break;
     		case R.id.receber:
     			i = new Intent(this,ListaDocumento.class);

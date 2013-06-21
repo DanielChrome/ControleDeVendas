@@ -101,7 +101,7 @@
             android:src="@drawable/other" />
 
         <ImageButton
-            android:id="@+id/relatorios"
+            android:id="@+id/replicar"
             android:layout_width="80dp"
             android:layout_height="70dp"
             android:background="@android:color/transparent"
@@ -140,7 +140,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="@string/relatorios"
+            android:text="@string/replicar"
             android:textColor="@color/CinzaEscuro" />
     
     	<TextView

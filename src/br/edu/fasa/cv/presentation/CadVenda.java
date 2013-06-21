@@ -8,6 +8,9 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,7 +32,7 @@ import br.edu.fasa.cv.domainmodel.Venda;
 import br.edu.fasa.cv.domainmodel.VendaProduto;
 import br.edu.fasa.cv.util.Util;
 
-public class CadVenda extends Activity {
+public class CadVenda extends Activity implements LocationListener{
 	ProdutoDAO pdao;
 	ClienteDAO cdao;
 	DocumentoDAO ddao;
@@ -47,11 +50,17 @@ public class CadVenda extends Activity {
 	TextView total;
 	String mopcao;
 	ImageButton[] opcao = new ImageButton[8];
+	static LocationManager lm;
+	String lon,lat;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.cad_venda);
+		
+		lm = (LocationManager) getSystemService(LOCATION_SERVICE);
+		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1, this);
+		
 		cliente = (Spinner) findViewById(R.id.vnd_spcliente);
 		prazo = (Spinner) findViewById(R.id.vnd_spformapgto);
 		listviewprodutos = (ListView) findViewById(R.id.vnd_listprd);
@@ -292,5 +301,31 @@ public class CadVenda extends Activity {
 			}
 		}
 
+	}
+	//Metodos para pegar posicionamento GPS
+	@Override
+	public void onLocationChanged(Location loc) {
+		// TODO Auto-generated method stub
+		// Salva valores no banco.
+		lon = Double.toString(loc.getLongitude());
+		lat = Double.toString(loc.getLatitude());
+	}
+
+	@Override
+	public void onProviderDisabled(String arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onProviderEnabled(String arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
+		// TODO Auto-generated method stub
+		
 	}
 }

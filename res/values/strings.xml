@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">Controle de Vendas</string>
@@ -49,6 +50,7 @@
     <string name="fatura_title">Faturar</string>
     <string name="fatura_message">Confirma pagamento de documento?</string>
     <string name="faturar">Faturar documento</string>
+    <string name="replicar">Replicar</string>
 
     <string-array name="prazo">
         <item>A Vista</item>
@@ -58,5 +60,8 @@
         <item>30/60/90/120</item>
         <item>30/60/90/120/180</item>
     </string-array>
+
+    <string name="title_activity_replicacao">Replicacao</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
